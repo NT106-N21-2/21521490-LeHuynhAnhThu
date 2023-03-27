@@ -31,9 +31,10 @@ namespace Lab01
             f5.ShowDialog();
         }
 
-        private void Lab01_Load(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-
+            Lab01_Bai05 f6 = new Lab01_Bai05();
+            f6.ShowDialog();
         }
     }
 }
