@@ -89,7 +89,7 @@ namespace Lab01
                             word += thousandWords[thousand] + " ";
                         }
 
-                        if (hundred == 0 && thousand != 0)
+                        if (hundred == 0 && thousand != 0 && (ten != 0 || one != 0))
                         {
                             word += "không trăm ";
                         }
@@ -100,7 +100,7 @@ namespace Lab01
 
                         if (ten == 0 && one != 0 && (thousand != 0 || hundred != 0))
                         {
-                            word += "lẻ ";
+                            word += "lẻ " + oneWords[one];
                         }
                         else if (ten == 1)
                         {
@@ -137,8 +137,7 @@ namespace Lab01
                                 word += oneWords[one] + " ";
                             }
                         }
-
-                        if (one != 0)
+                        else
                         {
                             word += oneWords[one];
                         }
