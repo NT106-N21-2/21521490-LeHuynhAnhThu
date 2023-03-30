@@ -19,10 +19,10 @@ namespace Lab01
 
         private void textBox_num1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1 && !Char.IsControl(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '-' && e.KeyChar != '.')
             {
                 e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Dữ liệu nhập vào không phải số nguyên.  Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult Notification = MessageBox.Show("Dữ liệu nhập vào không phải số thực hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Notification == DialogResult.Yes)
                 {
                     textBox_num1.Text = "";
@@ -32,14 +32,24 @@ namespace Lab01
                     this.Hide();
                 }
             }
-        }
 
-        private void textBox_num2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1 && !Char.IsControl(e.KeyChar))
+            if (e.KeyChar == '-' && ((sender as TextBox).SelectionStart != 0 || (sender as TextBox).Text.Contains("-")))
             {
                 e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Dữ liệu nhập vào không phải số.  Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult Notification = MessageBox.Show("Dấu trừ chỉ được nhập ở đầu số. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Notification == DialogResult.Yes)
+                {
+                    textBox_num1.Text = "";
+                }
+                else
+                {
+                    this.Hide();
+                }
+            }
+            if (e.KeyChar == '.' && ((sender as TextBox).SelectionStart == 0 || (sender as TextBox).Text.Contains(".")))
+            {
+                e.Handled = true;
+                DialogResult Notification = MessageBox.Show("Số thực chỉ được nhập 1 dấu chấm và dấu chấm không được ở đầu số. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Notification == DialogResult.Yes)
                 {
                     textBox_num2.Text = "";
@@ -51,15 +61,86 @@ namespace Lab01
             }
         }
 
-        private void textBox_num3_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox_num2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1 && !Char.IsControl(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '-' && e.KeyChar != '.')
             {
                 e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Dữ liệu nhập vào không phải số.  Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult Notification = MessageBox.Show("Dữ liệu nhập vào không phải số thực hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Notification == DialogResult.Yes)
                 {
                     textBox_num3.Text = "";
+                }
+                else
+                {
+                    this.Hide();
+                }
+            }
+
+            if (e.KeyChar == '-' && ((sender as TextBox).SelectionStart != 0 || (sender as TextBox).Text.Contains("-")))
+            {
+                e.Handled = true;
+                DialogResult Notification = MessageBox.Show("Dấu trừ chỉ được nhập ở đầu số. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Notification == DialogResult.Yes)
+                {
+                    textBox_num3.Text = "";
+                }
+                else
+                {
+                    this.Hide();
+                }
+            }
+            if (e.KeyChar == '.' && ((sender as TextBox).SelectionStart == 0 || (sender as TextBox).Text.Contains(".")))
+            {
+                e.Handled = true; // Không cho phép nhập dấu chấm nếu đã có trong số
+                DialogResult Notification = MessageBox.Show("Số thực chỉ được nhập 1 dấu chấm và dấu chấm không được ở đầu số. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Notification == DialogResult.Yes)
+                {
+                    textBox_num3.Text = "";
+                }
+                else
+                {
+                    this.Hide();
+                }
+            }
+        }
+
+        private void textBox_num3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '-' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+                DialogResult Notification = MessageBox.Show("Dữ liệu nhập vào không phải số thực hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Notification == DialogResult.Yes)
+                {
+                    textBox_num2.Text = "";
+                }
+                else
+                {
+                    this.Hide();
+                }
+            }
+
+            if (e.KeyChar == '-' && ((sender as TextBox).SelectionStart != 0 || (sender as TextBox).Text.Contains("-")))
+            {
+                e.Handled = true;
+                DialogResult Notification = MessageBox.Show("Dấu trừ chỉ được nhập ở đầu số. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Notification == DialogResult.Yes)
+                {
+                    textBox_num2.Text = "";
+                }
+                else
+                {
+                    this.Hide();
+                }
+            }
+            if (e.KeyChar == '.' && ((sender as TextBox).SelectionStart == 0 || (sender as TextBox).Text.Contains(".")))
+            {
+                e.Handled = true; // Không cho phép nhập dấu chấm nếu đã có trong số
+                DialogResult Notification = MessageBox.Show("Số thực chỉ được nhập 1 dấu chấm và dấu chấm không được ở đầu số. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Notification == DialogResult.Yes)
+                {
+                    textBox_num2.Text = "";
                 }
                 else
                 {

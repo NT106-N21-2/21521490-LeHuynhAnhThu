@@ -21,8 +21,8 @@ namespace Lab01
         {
             int vehicle = comboBox_vehicle.SelectedIndex;
             int fuel = comboBox_fuel.SelectedIndex;
-
             double full_fuel = 0, distance = 0;
+
             if (vehicle == 0)
             {
                 if (fuel == 0 || fuel == 1)
@@ -137,9 +137,9 @@ namespace Lab01
             }
 
             double paid = 0;
-            double a = 26.830;
-            double b = 26.070;
-            double c = 21.310;
+            double a = 26830;
+            double b = 26070;
+            double c = 21310;
 
             if (fuel == 0)
             {
@@ -155,12 +155,13 @@ namespace Lab01
             }
 
             textBox_distance.Text = string.Format("{0:N2} km", distance);
-            textBox_paid.Text = string.Format("{0:N3} đồng", paid);
+            textBox_paid.Text = string.Format("{0:N0} đồng", paid);
         }
 
         private void button_exit_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
+
     }
 }

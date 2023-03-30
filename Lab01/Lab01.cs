@@ -36,5 +36,23 @@ namespace Lab01
             Lab01_Bai05 f6 = new Lab01_Bai05();
             f6.ShowDialog();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Lab01_Bai06 f7 = new Lab01_Bai06();
+            f7.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Lab01_Bai07 f8 = new Lab01_Bai07();
+            f8.ShowDialog();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Lab01_Bai08 f9 = new Lab01_Bai08();
+            f9.ShowDialog();
+        }
     }
 }

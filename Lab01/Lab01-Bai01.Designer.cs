@@ -40,7 +40,7 @@
             textBox_num2.BackColor = Color.FromArgb(252, 248, 241);
             textBox_num2.BorderStyle = BorderStyle.None;
             textBox_num2.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox_num2.Location = new Point(700, 111);
+            textBox_num2.Location = new Point(700, 112);
             textBox_num2.Name = "textBox_num2";
             textBox_num2.Size = new Size(159, 27);
             textBox_num2.TabIndex = 2;
