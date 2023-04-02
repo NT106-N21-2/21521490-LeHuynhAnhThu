@@ -28,7 +28,7 @@ namespace Lab01
                 if (Notification == DialogResult.Yes)
                 {
                     textBox_input.Text = "";
-                    listView_output.Items.Clear();
+                    return;
                 }
             }
 
@@ -43,7 +43,7 @@ namespace Lab01
                     if (Notification == DialogResult.Yes)
                     {
                         textBox_input.Text = "";
-                        listView_output.Items.Clear();
+                        return;
                     }
                 }
                 grades[i] = grade;
@@ -71,12 +71,12 @@ namespace Lab01
             {
                 if (grades[i] == maxGrade)
                 {
-                    listView_output.Items.Add("Môn điểm cao nhất: Môn " + (i + 1) + " (" + maxGrade + ")");
+                    listView_output.Items.Add("Môn cao điểm nhất: Môn " + (i + 1) + " (" + maxGrade + " điểm)");
                 }
 
                 if (grades[i] == minGrade)
                 {
-                    listView_output.Items.Add("Môn điểm thấp nhất: Môn " + (i + 1) + " (" + minGrade + ")");
+                    listView_output.Items.Add("Môn thấp điểm nhất: Môn " + (i + 1) + " (" + minGrade + " điểm)");
                 }
             }
 
@@ -121,7 +121,7 @@ namespace Lab01
 
         private void button_exit_Click(object sender, EventArgs e)
         {
-            DialogResult Notification = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult Notification = MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (Notification == DialogResult.Yes)
             {
                 this.Hide();

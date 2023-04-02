@@ -160,7 +160,7 @@ namespace Lab01
 
         private void button_exit_Click(object sender, EventArgs e)
         {
-            DialogResult Notification = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult Notification = MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (Notification == DialogResult.Yes)
             {
                 this.Hide();
