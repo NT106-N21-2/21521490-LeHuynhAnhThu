@@ -7,7 +7,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net;
-using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +21,7 @@ namespace Lab01
             InitializeComponent();
         }
 
-        /*public bool IsValidIPAddress(string ipAddress)
+        public bool IsValidIPAddress(string ipAddress)
         {
             // Kiểm tra độ dài địa chỉ IP
             string[] ipParts = ipAddress.Split('.');
@@ -43,44 +42,11 @@ namespace Lab01
 
             // Địa chỉ IP hợp lệ
             return true;
-        }*/
-
-        private string GetSubnetMask(int bits)
-        {
-            // Tính subnet mask dựa trên số bit mạng
-            uint mask = ~(uint.MaxValue >> bits);
-            byte[] bytes = new byte[] { (byte)(mask >> 24), (byte)(mask >> 16), (byte)(mask >> 8), (byte)mask };
-            return new IPAddress(bytes).ToString();
         }
-    private void button_calculate_Click(object sender, EventArgs e)
+
+        private void button_calculate_Click(object sender, EventArgs e)
         {
-            string[] ipSubnet = textBox_input.Text.Split('/');
-            string ip = ipSubnet[0];
-            int subnet = Int32.Parse(ipSubnet[1]);
-            int numSubnets = Int32.Parse(textBox_numSubnet.Text);
-
-            // Kiểm tra địa chỉ mạng và subnet mask
-            IPAddress IP;
-            IPAddress mask;
-            if (!IPAddress.TryParse(ip, out IP) || IP.AddressFamily != AddressFamily.InterNetwork || !IPAddress.TryParse(GetSubnetMask(subnet), out mask) || mask.AddressFamily != AddressFamily.InterNetwork)
-            {
-                MessageBox.Show("Địa chỉ mạng hoặc subnet mask không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                // Kiểm tra số mạng con
-                int maxSubnets = (int)Math.Pow(2, 32 - subnet) - 2;
-                if (numSubnets < 1 || numSubnets > maxSubnets)
-                {
-                    MessageBox.Show(string.Format("Số mạng con phải là một số nguyên dương không vượt quá {0}.", maxSubnets), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show("Địa chỉ mạng và số mạng con hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-
-            /* Kiểm tra giá trị nhập vào có hợp lệ không và lấy địa chỉ mạng, số mạng con cần chia từ các điều khiển đầu vào trên giao diện
+            // Kiểm tra giá trị nhập vào có hợp lệ không và lấy địa chỉ mạng, số mạng con cần chia từ các điều khiển đầu vào trên giao diện
             if (textBox_input.Text.Length == 0 || textBox_numSubnet.Text.Length == 0)
             {
                 DialogResult Notification = MessageBox.Show("Thiếu dữ liệu để có thể chia mạng. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -112,9 +78,9 @@ namespace Lab01
 
             string ip = ipSubnet[0];
             int subnet;
-            if (!int.TryParse(ipSubnet[1], out subnet) || (subnet < 8 || subnet > 31))
+            if (!int.TryParse(ipSubnet[1], out subnet) || subnet < 8 || subnet > 32)
             {
-                DialogResult Notification = MessageBox.Show("Subnet Mask không đúng định dạng! Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult Notification = MessageBox.Show("Subnet Mask không đúng định dạng số! Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Notification == DialogResult.Yes)
                 {
                     textBox_input.Text = "";
@@ -137,7 +103,7 @@ namespace Lab01
                 {
                     this.Hide();
                 }
-            }*/
+            }
 
             // Tính toán số bit mượn và số bit host còn lại
             int borrowedBits = (int)Math.Ceiling(Math.Log(numSubnets, 2));
