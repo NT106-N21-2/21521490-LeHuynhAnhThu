@@ -43,7 +43,7 @@
             // button_calculate
             // 
             button_calculate.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button_calculate.Location = new Point(488, 126);
+            button_calculate.Location = new Point(515, 126);
             button_calculate.Name = "button_calculate";
             button_calculate.Size = new Size(142, 35);
             button_calculate.TabIndex = 22;
@@ -65,7 +65,7 @@
             // button_delete
             // 
             button_delete.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button_delete.Location = new Point(301, 126);
+            button_delete.Location = new Point(349, 126);
             button_delete.Name = "button_delete";
             button_delete.Size = new Size(84, 35);
             button_delete.TabIndex = 20;
@@ -112,11 +112,11 @@
             // 
             dataGridView_output.BackgroundColor = SystemColors.Control;
             dataGridView_output.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView_output.Location = new Point(310, 185);
+            dataGridView_output.Location = new Point(12, 185);
             dataGridView_output.Name = "dataGridView_output";
             dataGridView_output.RowHeadersWidth = 51;
             dataGridView_output.RowTemplate.Height = 29;
-            dataGridView_output.Size = new Size(478, 253);
+            dataGridView_output.Size = new Size(776, 253);
             dataGridView_output.TabIndex = 25;
             // 
             // Lab01_Bai07

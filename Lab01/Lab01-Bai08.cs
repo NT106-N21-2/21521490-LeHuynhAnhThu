@@ -28,6 +28,7 @@ namespace Lab01
                 if (Notification == DialogResult.Yes)
                 {
                     textBox_input.Text = "";
+                    listView_output.Items.Clear();
                 }
             }
 
@@ -42,6 +43,7 @@ namespace Lab01
                     if (Notification == DialogResult.Yes)
                     {
                         textBox_input.Text = "";
+                        listView_output.Items.Clear();
                     }
                 }
                 grades[i] = grade;
@@ -113,13 +115,17 @@ namespace Lab01
             if (Notification == DialogResult.Yes)
             {
                 textBox_input.Text = "";
-                listView_output.Clear();
+                listView_output.Items.Clear();
             }
         }
 
         private void button_exit_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            DialogResult Notification = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Notification == DialogResult.Yes)
+            {
+                this.Hide();
+            } 
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Lab01
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Dữ liệu nhập vào không phải là số nguyên dương. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult Notification = MessageBox.Show("Dữ liệu nhập vào không hợp lệ! Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Notification == DialogResult.Yes)
                 {
                     textBox_num1.Text = "";
@@ -39,7 +39,7 @@ namespace Lab01
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Dữ liệu nhập vào không phải là số nguyên hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult Notification = MessageBox.Show("Dữ liệu nhập vào không hợp lệ! Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Notification == DialogResult.Yes)
                 {
                     textBox_num2.Text = "";
@@ -131,7 +131,11 @@ namespace Lab01
 
         private void button_exit_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            DialogResult Notification = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Notification == DialogResult.Yes)
+            {
+                this.Hide();
+            }
         }
     }
 }

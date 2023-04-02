@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic.Devices;
+﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.Devices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,36 +21,97 @@ namespace Lab01
             InitializeComponent();
         }
 
+        public bool IsValidIPAddress(string ipAddress)
+        {
+            // Kiểm tra độ dài địa chỉ IP
+            string[] ipParts = ipAddress.Split('.');
+            if (ipParts.Length != 4)
+            {
+                return false;
+            }
+
+            // Kiểm tra giá trị của từng phần
+            foreach (string ipPart in ipParts)
+            {
+                int ipInt;
+                if (!int.TryParse(ipPart, out ipInt) || ipInt < 0 || ipInt > 255)
+                {
+                    return false;
+                }
+            }
+
+            // Địa chỉ IP hợp lệ
+            return true;
+        }
+
         private void button_calculate_Click(object sender, EventArgs e)
         {
-            // lấy địa chỉ mạng và số mạng con từ TextBox tương ứng
-            string networkAddress = textBox_input.Text;
-            int numSubnets = Int32.Parse(textBox_numSubnet.Text);
+            // Kiểm tra giá trị nhập vào có hợp lệ không và lấy địa chỉ mạng, số mạng con cần chia từ các điều khiển đầu vào trên giao diện
+            if (textBox_input.Text.Length == 0 || textBox_numSubnet.Text.Length == 0)
+            {
+                DialogResult Notification = MessageBox.Show("Thiếu dữ liệu để có thể chia mạng. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Notification == DialogResult.Yes)
+                {
+                    textBox_input.Text = "";
+                    textBox_numSubnet.Text = "";
+                    dataGridView_output.DataSource = null;
+                }
+                else
+                {
+                    this.Hide();
+                }
+            }
 
-            // Tách địa chỉ IP và subnet mask từ chuỗi đầu vào
             string[] ipSubnet = textBox_input.Text.Split('/');
-            string ipAddress = ipSubnet[0];
-            int subnet = int.Parse(ipSubnet[1]);
+            if (ipSubnet.Length != 2 || !IsValidIPAddress(ipSubnet[0]))
+            {
+                DialogResult Notification = MessageBox.Show("Địa chỉ mạng/Subnet Mask không đúng định dạng! Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Notification == DialogResult.Yes)
+                {
+                    textBox_input.Text = "";
+                }
+                else
+                {
+                    this.Hide();
+                }
+            }
 
-            // Tính toán subnet mask từ số bit subnet
-            uint mask = 0xffffffff;
-            mask <<= (32 - subnet);
+            string ip = ipSubnet[0];
+            int subnet;
+            if (!int.TryParse(ipSubnet[1], out subnet) || subnet < 8 || subnet > 32)
+            {
+                DialogResult Notification = MessageBox.Show("Subnet Mask không đúng định dạng số! Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Notification == DialogResult.Yes)
+                {
+                    textBox_input.Text = "";
+                }
+                else
+                {
+                    this.Hide();
+                }
+            }
 
-            // Chuyển đổi địa chỉ IP và subnet mask sang dạng số nguyên không dấu
-            uint ip = BitConverter.ToUInt32(IPAddress.Parse(ipAddress).GetAddressBytes(), 0);
-            uint network = ip & mask;
+            int numSubnets;
+            if (!int.TryParse(textBox_numSubnet.Text, out numSubnets) || numSubnets <= 0)
+            {
+                DialogResult Notification = MessageBox.Show("Số lượng mạng con không đúng định dạng hoặc không hợp lệ! Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Notification == DialogResult.Yes)
+                {
+                    textBox_numSubnet.Text = "";
+                }
+                else
+                {
+                    this.Hide();
+                }
+            }
 
-            // tính toán số bit subnet và số host trong mỗi subnet
-            int numSubnetBits = (int)Math.Ceiling(Math.Log(numSubnets, 2));
-            int numHostBits = 32 - subnet - numSubnetBits;
-            int numHostsPerSubnet = (int)Math.Pow(2, numHostBits) - 2;
+            // Tính toán số bit mượn và số bit host còn lại
+            int borrowedBits = (int)Math.Ceiling(Math.Log(numSubnets, 2));
+            int hostBits = 32 - borrowedBits - subnet;
 
-            // tính toán địa chỉ mạng và broadcast address mới cho từng subnet
-            int subnetMask = (int)Math.Pow(2, 32 - subnet) - 1;
-            int subnetMaskComplement = subnetMask;
-            long networkAddressBase = network & subnetMask;
-            long broadcastAddressBase = networkAddressBase | subnetMaskComplement;
-            long subnetAddress = networkAddressBase;
+            // Chuyển đổi địa chỉ mạng thành dạng số nguyên
+            byte[] ipBytes = IPAddress.Parse(ip).GetAddressBytes();
+            uint networkAddress = (uint)(ipBytes[0] << 24) | (uint)(ipBytes[1] << 16) | (uint)(ipBytes[2] << 8) | (uint)(ipBytes[3]);
 
             // tạo DataTable với các cột tương ứng với các thuộc tính của Subnet
             DataTable dataTable = new DataTable();
@@ -59,50 +121,30 @@ namespace Lab01
             dataTable.Columns.Add("Địa chỉ cuối", typeof(string));
             dataTable.Columns.Add("Địa chỉ Broadcast", typeof(string));
 
+            // Tính toán các thông tin về từng mạng con
             for (int i = 0; i < numSubnets; i++)
             {
-                // tính toán địa chỉ mạng và broadcast address cho subnet hiện tại
-                int subnetMaskBits = subnet + numSubnetBits;
-                int subnetMaskNew = (int)Math.Pow(2, 32 - subnetMaskBits) - 1;
-                int subnetMaskComplementNew = ~subnetMaskNew;
-                long networkAddressNew = subnetAddress;
-                long broadcastAddressNew = networkAddressNew | subnetMaskComplementNew;
-
-                // tính toán địa chỉ đầu và địa chỉ cuối của subnet hiện tại
-                long firstIPAddress = networkAddressNew + 1;
-                long lastIPAddress = broadcastAddressNew - 1;
+                double jump = Math.Pow(2, hostBits);
+                uint subnetCurrent = networkAddress + (uint)(i * jump);
+                uint broadcast = subnetCurrent + (uint)(jump - 1); ;
+                uint firstHost = subnetCurrent + 1;
+                uint lastHost = broadcast - 1;
 
                 // tạo đối tượng DataRow với các giá trị tương ứng cho từng cột
                 DataRow row = dataTable.NewRow();
                 row["STT"] = i + 1;
-                row["Địa chỉ mạng"] = IntToIPAddress(networkAddressNew);
-                row["Địa chỉ đầu"] = IntToIPAddress(firstIPAddress);
-                row["Địa chỉ cuối"] = IntToIPAddress(lastIPAddress);
-                row["Địa chỉ Broadcast"] = IntToIPAddress(broadcastAddressNew);
+                row["Địa chỉ mạng"] = string.Format("{0}.{1}.{2}.{3}", (subnetCurrent >> 24) & 255, (subnetCurrent >> 16) & 255, (subnetCurrent >> 8) & 255, subnetCurrent & 255);
+                row["Địa chỉ đầu"] = string.Format("{0}.{1}.{2}.{3}", (firstHost >> 24) & 255, (firstHost >> 16) & 255, (firstHost >> 8) & 255, firstHost & 255);
+                row["Địa chỉ cuối"] = string.Format("{0}.{1}.{2}.{3}", (lastHost >> 24) & 255, (lastHost >> 16) & 255, (lastHost >> 8) & 255, lastHost & 255);
+                row["Địa chỉ Broadcast"] = string.Format("{0}.{1}.{2}.{3}", (broadcast >> 24) & 255, (broadcast >> 16) & 255, (broadcast >> 8) & 255, broadcast & 255);
 
                 // thêm DataRow vào DataTable
                 dataTable.Rows.Add(row);
-
-                // cập nhật địa chỉ mạng cho subnet tiếp theo
-                subnetAddress = broadcastAddressNew + 1;
             }
 
             // hiển thị DataTable trong DataGridView
             dataGridView_output.DataSource = dataTable;
-        }
 
-        private string IntToIPAddress(long ipAddressInt)
-        {
-            long[] octets = new long[4];
-
-            octets[0] = (ipAddressInt >> 24) & 0xFF;
-            octets[1] = (ipAddressInt >> 16) & 0xFF;
-            octets[2] = (ipAddressInt >> 8) & 0xFF;
-            octets[3] = ipAddressInt & 0xFF;
-
-            string ipAddress = octets[0].ToString() + "." + octets[1].ToString() + "." + octets[2].ToString() + "." + octets[3].ToString();
-        
-            return ipAddress;
         }
 
         private void button_delete_Click(object sender, EventArgs e)
@@ -111,13 +153,18 @@ namespace Lab01
             if (Notification == DialogResult.Yes)
             {
                 textBox_input.Text = "";
-                dataGridView_output.Text = "";
+                textBox_numSubnet.Text = "";
+                dataGridView_output.DataSource = null;
             }
         }
 
         private void button_exit_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            DialogResult Notification = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Notification == DialogResult.Yes)
+            {
+                this.Hide();
+            }
         }
     }
 }
