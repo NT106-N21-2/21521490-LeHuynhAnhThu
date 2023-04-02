@@ -167,5 +167,16 @@ namespace Lab01
             }
         }
 
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+            DialogResult Notification = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Notification == DialogResult.Yes)
+            {
+                comboBox_vehicle.Items.Clear();
+                comboBox_fuel.Items.Clear();
+                textBox_distance.Text = "";
+                textBox_paid.Text = "";
+            }
+        }
     }
 }

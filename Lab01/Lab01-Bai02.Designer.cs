@@ -44,7 +44,7 @@
             textBox_num1.BackColor = Color.FromArgb(252, 248, 241);
             textBox_num1.BorderStyle = BorderStyle.None;
             textBox_num1.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox_num1.Location = new Point(78, 262);
+            textBox_num1.Location = new Point(105, 301);
             textBox_num1.Name = "textBox_num1";
             textBox_num1.Size = new Size(159, 27);
             textBox_num1.TabIndex = 0;
@@ -56,7 +56,7 @@
             textBox_num2.BackColor = Color.FromArgb(252, 248, 241);
             textBox_num2.BorderStyle = BorderStyle.None;
             textBox_num2.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox_num2.Location = new Point(397, 263);
+            textBox_num2.Location = new Point(401, 301);
             textBox_num2.Name = "textBox_num2";
             textBox_num2.Size = new Size(155, 27);
             textBox_num2.TabIndex = 1;
@@ -68,7 +68,7 @@
             textBox_num3.BackColor = Color.FromArgb(252, 248, 241);
             textBox_num3.BorderStyle = BorderStyle.None;
             textBox_num3.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox_num3.Location = new Point(712, 263);
+            textBox_num3.Location = new Point(701, 301);
             textBox_num3.Name = "textBox_num3";
             textBox_num3.Size = new Size(151, 27);
             textBox_num3.TabIndex = 2;
@@ -102,10 +102,11 @@
             // button_find
             // 
             button_find.BackColor = Color.FromArgb(250, 205, 204);
-            button_find.Font = new Font("Times New Roman", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button_find.Location = new Point(64, 339);
+            button_find.FlatStyle = FlatStyle.Flat;
+            button_find.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button_find.Location = new Point(118, 362);
             button_find.Name = "button_find";
-            button_find.Size = new Size(173, 70);
+            button_find.Size = new Size(131, 70);
             button_find.TabIndex = 5;
             button_find.Text = "TÌM";
             button_find.UseVisualStyleBackColor = false;
@@ -114,10 +115,11 @@
             // button_delete
             // 
             button_delete.BackColor = Color.FromArgb(250, 205, 204);
-            button_delete.Font = new Font("Times New Roman", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button_delete.Location = new Point(375, 339);
+            button_delete.FlatStyle = FlatStyle.Flat;
+            button_delete.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button_delete.Location = new Point(417, 362);
             button_delete.Name = "button_delete";
-            button_delete.Size = new Size(173, 70);
+            button_delete.Size = new Size(127, 70);
             button_delete.TabIndex = 6;
             button_delete.Text = "XÓA";
             button_delete.UseVisualStyleBackColor = false;
@@ -126,10 +128,11 @@
             // button_exit
             // 
             button_exit.BackColor = Color.FromArgb(250, 205, 204);
-            button_exit.Font = new Font("Times New Roman", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button_exit.Location = new Point(703, 339);
+            button_exit.FlatStyle = FlatStyle.Flat;
+            button_exit.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button_exit.Location = new Point(703, 362);
             button_exit.Name = "button_exit";
-            button_exit.Size = new Size(173, 70);
+            button_exit.Size = new Size(140, 70);
             button_exit.TabIndex = 7;
             button_exit.Text = "THOÁT";
             button_exit.UseVisualStyleBackColor = false;

@@ -106,5 +106,25 @@ namespace Lab01
                 textBox_sum.Text = sum.ToString();
             }
         }
+
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+            DialogResult Notification = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Notification == DialogResult.Yes)
+            {
+                textBox_num1.Text = "";
+                textBox_num2.Text = "";
+                textBox_sum.Text = "";
+            }
+        }
+
+        private void button_exit_Click(object sender, EventArgs e)
+        {
+            DialogResult Notification = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Notification == DialogResult.Yes)
+            {
+                this.Hide();
+            }
+        }
     }
 }

@@ -20,9 +20,9 @@ namespace Lab01
 
         private void button_calculate_Click(object sender, EventArgs e)
         {
-            string[] data = textBox_input.Text.Trim().Split(',');
+            string[] data = textBox_input.Text.Split(',');
 
-            if (data.Length < 2)
+            if (data.Length < 2 || string.IsNullOrWhiteSpace(data[0]))
             {
                 DialogResult Notification = MessageBox.Show("Nhập sai định dạng. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Notification == DialogResult.Yes)
@@ -49,7 +49,7 @@ namespace Lab01
                 grades[i] = grade;
             }
 
-            
+
 
             listView_output.Items.Add("Họ và tên: " + fullName);
 
@@ -125,7 +125,7 @@ namespace Lab01
             if (Notification == DialogResult.Yes)
             {
                 this.Hide();
-            } 
+            }
         }
     }
 }

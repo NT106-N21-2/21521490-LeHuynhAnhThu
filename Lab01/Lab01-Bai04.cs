@@ -143,9 +143,9 @@ namespace Lab01
                         }
                     }
 
-                        textBox_read.Text = word;
+                    textBox_read.Text = word;
                 }
-                
+
             }
         }
 

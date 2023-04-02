@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lab01_Bai07));
             button_calculate = new Button();
             button_exit = new Button();
             button_delete = new Button();
@@ -42,52 +43,62 @@
             // 
             // button_calculate
             // 
-            button_calculate.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button_calculate.Location = new Point(515, 126);
+            button_calculate.BackColor = Color.FromArgb(250, 205, 204);
+            button_calculate.FlatStyle = FlatStyle.Flat;
+            button_calculate.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button_calculate.Location = new Point(494, 205);
             button_calculate.Name = "button_calculate";
-            button_calculate.Size = new Size(142, 35);
+            button_calculate.Size = new Size(211, 69);
             button_calculate.TabIndex = 22;
             button_calculate.Text = "CHIA MẠNG";
-            button_calculate.UseVisualStyleBackColor = true;
+            button_calculate.UseVisualStyleBackColor = false;
             button_calculate.Click += button_calculate_Click;
             // 
             // button_exit
             // 
-            button_exit.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button_exit.Location = new Point(704, 126);
+            button_exit.BackColor = Color.FromArgb(250, 205, 204);
+            button_exit.FlatStyle = FlatStyle.Flat;
+            button_exit.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button_exit.Location = new Point(778, 205);
             button_exit.Name = "button_exit";
-            button_exit.Size = new Size(84, 35);
+            button_exit.Size = new Size(133, 69);
             button_exit.TabIndex = 21;
             button_exit.Text = "THOÁT";
-            button_exit.UseVisualStyleBackColor = true;
+            button_exit.UseVisualStyleBackColor = false;
             button_exit.Click += button_exit_Click;
             // 
             // button_delete
             // 
-            button_delete.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button_delete.Location = new Point(349, 126);
+            button_delete.BackColor = Color.FromArgb(250, 205, 204);
+            button_delete.FlatStyle = FlatStyle.Flat;
+            button_delete.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button_delete.Location = new Point(268, 205);
             button_delete.Name = "button_delete";
-            button_delete.Size = new Size(84, 35);
+            button_delete.Size = new Size(128, 69);
             button_delete.TabIndex = 20;
             button_delete.Text = "XÓA";
-            button_delete.UseVisualStyleBackColor = true;
+            button_delete.UseVisualStyleBackColor = false;
             button_delete.Click += button_delete_Click;
             // 
             // textBox_input
             // 
-            textBox_input.Font = new Font("Times New Roman", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox_input.Location = new Point(595, 25);
+            textBox_input.BackColor = Color.FromArgb(252, 248, 241);
+            textBox_input.BorderStyle = BorderStyle.None;
+            textBox_input.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox_input.Location = new Point(676, 87);
             textBox_input.Name = "textBox_input";
-            textBox_input.Size = new Size(193, 28);
+            textBox_input.Size = new Size(228, 27);
             textBox_input.TabIndex = 19;
             textBox_input.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox_numSubnet
             // 
-            textBox_numSubnet.Font = new Font("Times New Roman", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox_numSubnet.Location = new Point(595, 70);
+            textBox_numSubnet.BackColor = Color.FromArgb(252, 248, 241);
+            textBox_numSubnet.BorderStyle = BorderStyle.None;
+            textBox_numSubnet.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox_numSubnet.Location = new Point(677, 153);
             textBox_numSubnet.Name = "textBox_numSubnet";
-            textBox_numSubnet.Size = new Size(193, 28);
+            textBox_numSubnet.Size = new Size(225, 27);
             textBox_numSubnet.TabIndex = 24;
             textBox_numSubnet.TextAlign = HorizontalAlignment.Center;
             // 
@@ -110,20 +121,22 @@
             // 
             // dataGridView_output
             // 
-            dataGridView_output.BackgroundColor = SystemColors.Control;
+            dataGridView_output.BackgroundColor = Color.FromArgb(252, 248, 241);
+            dataGridView_output.BorderStyle = BorderStyle.None;
             dataGridView_output.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView_output.Location = new Point(12, 185);
+            dataGridView_output.Location = new Point(268, 288);
             dataGridView_output.Name = "dataGridView_output";
             dataGridView_output.RowHeadersWidth = 51;
             dataGridView_output.RowTemplate.Height = 29;
-            dataGridView_output.Size = new Size(776, 253);
+            dataGridView_output.Size = new Size(636, 161);
             dataGridView_output.TabIndex = 25;
             // 
             // Lab01_Bai07
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(923, 519);
             Controls.Add(dataGridView_output);
             Controls.Add(textBox_numSubnet);
             Controls.Add(button_calculate);
