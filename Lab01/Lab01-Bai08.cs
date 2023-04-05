@@ -20,6 +20,7 @@ namespace Lab01
 
         private void button_calculate_Click(object sender, EventArgs e)
         {
+            listView_output.Clear();
             string[] data = textBox_input.Text.Split(',');
 
             if (data.Length < 2 || string.IsNullOrWhiteSpace(data[0]))
@@ -71,12 +72,12 @@ namespace Lab01
             {
                 if (grades[i] == maxGrade)
                 {
-                    listView_output.Items.Add("Môn cao điểm nhất: Môn " + (i + 1) + " (" + maxGrade + " điểm)");
+                    listView_output.Items.Add("Môn cao điểm nhất: Môn " + (i + 1) + " (" + maxGrade + ")");
                 }
 
                 if (grades[i] == minGrade)
                 {
-                    listView_output.Items.Add("Môn thấp điểm nhất: Môn " + (i + 1) + " (" + minGrade + " điểm)");
+                    listView_output.Items.Add("Môn thấp điểm nhất: Môn " + (i + 1) + " (" + minGrade + ")");
                 }
             }
 
