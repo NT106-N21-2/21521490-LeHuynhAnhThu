@@ -44,6 +44,27 @@ namespace Lab01
             return true;
         }
 
+        //Hàm kiểm tra lớp mạng 
+        public bool IsClassABC(string address)
+        {
+            IPAddress ipAddress;
+
+            if (IPAddress.TryParse(address, out ipAddress))
+            {
+                byte[] bytes = ipAddress.GetAddressBytes();
+                int firstByte = bytes[0];
+
+                if ((firstByte >= 1 && firstByte <= 126) ||
+                    (firstByte >= 128 && firstByte <= 191) ||
+                    (firstByte >= 192 && firstByte <= 223))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         private void button_calculate_Click(object sender, EventArgs e)
         {
             // Kiểm tra giá trị nhập vào có hợp lệ không và lấy địa chỉ mạng, số mạng con cần chia từ các điều khiển đầu vào trên giao diện
@@ -54,7 +75,7 @@ namespace Lab01
                 {
                     textBox_input.Text = "";
                     textBox_numSubnet.Text = "";
-                    dataGridView_output.DataSource = null;
+                    return;
                 }
                 else
                 {
@@ -63,7 +84,8 @@ namespace Lab01
             }
 
             string[] ipSubnet = textBox_input.Text.Split('/');
-            if (ipSubnet.Length != 2 || !IsValidIPAddress(ipSubnet[0]))
+            string ip = ipSubnet[0];
+            if (ipSubnet.Length != 2 || !IsValidIPAddress(ip))
             {
                 DialogResult Notification = MessageBox.Show("Địa chỉ mạng/Subnet Mask không đúng định dạng! Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Notification == DialogResult.Yes)
@@ -76,7 +98,6 @@ namespace Lab01
                 }
             }
 
-            string ip = ipSubnet[0];
             int subnet;
             if (!int.TryParse(ipSubnet[1], out subnet) || subnet < 8 || subnet > 32)
             {
@@ -91,6 +112,15 @@ namespace Lab01
                 }
             }
 
+            // Ràng buộc lớp mạng
+            if (!IsClassABC(ip))
+            {
+                MessageBox.Show("Địa chỉ mạng không hợp lệ. Hãy nhập địa chỉ mạng thuộc lớp A, B hoặc C.", "Lỗi");
+                return;
+            }
+
+
+
             int numSubnets;
             if (!int.TryParse(textBox_numSubnet.Text, out numSubnets) || numSubnets <= 0)
             {
@@ -98,6 +128,25 @@ namespace Lab01
                 if (Notification == DialogResult.Yes)
                 {
                     textBox_numSubnet.Text = "";
+                }
+                else
+                {
+                    this.Hide();
+                }
+            }
+
+            // Tính số lượng mạng con tối đa có thể chia được
+            int maxSubnets = (int)Math.Pow(2, (32 - subnet) - 2); 
+
+            // Kiểm tra số lượng mạng con cần chia phải nhỏ hơn hoặc bằng số mạng con tối đa có thể chia được theo từng lớp mạng
+            if (numSubnets > maxSubnets)
+            {
+                DialogResult Notification = MessageBox.Show("Số lượng mạng con muốn chia không phù hợp! Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Notification == DialogResult.Yes)
+                {
+                    textBox_input.Text = "";
+                    textBox_numSubnet.Text = "";
+                    return;
                 }
                 else
                 {

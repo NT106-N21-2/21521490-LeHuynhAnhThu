@@ -35,7 +35,10 @@ namespace Lab01
                     DialogResult Notification = MessageBox.Show("Xe Wave Alpha không sử dụng Dầu DO 0,05S-II. Bạn có muốn chọn lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (Notification == DialogResult.Yes)
                     {
-                        comboBox_fuel.SelectedIndex = -1;
+                        comboBox_vehicle.Items.Clear();
+                        comboBox_fuel.Items.Clear();
+                        textBox_distance.Text = "";
+                        textBox_paid.Text = "";
                     }
                 }
             }
@@ -51,7 +54,10 @@ namespace Lab01
                     DialogResult Notification = MessageBox.Show("Xe Sirius không sử dụng Dầu DO 0,05S-II. Bạn có muốn chọn lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (Notification == DialogResult.Yes)
                     {
-                        comboBox_fuel.SelectedIndex = -1;
+                        comboBox_vehicle.Items.Clear();
+                        comboBox_fuel.Items.Clear();
+                        textBox_distance.Text = "";
+                        textBox_paid.Text = "";
                     }
                 }
             }
@@ -67,7 +73,10 @@ namespace Lab01
                     DialogResult Notification = MessageBox.Show("Xe Vision không sử dụng Dầu DO 0,05S-II. Bạn có muốn chọn lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (Notification == DialogResult.Yes)
                     {
-                        comboBox_fuel.SelectedIndex = -1;
+                        comboBox_vehicle.Items.Clear();
+                        comboBox_fuel.Items.Clear();
+                        textBox_distance.Text = "";
+                        textBox_paid.Text = "";
                     }
                 }
             }
@@ -83,7 +92,10 @@ namespace Lab01
                     DialogResult Notification = MessageBox.Show("Xe Lead chỉ sử dụng Xăng RON 95-III. Bạn có muốn chọn lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (Notification == DialogResult.Yes)
                     {
-                        comboBox_fuel.SelectedIndex = -1;
+                        comboBox_vehicle.Items.Clear();
+                        comboBox_fuel.Items.Clear();
+                        textBox_distance.Text = "";
+                        textBox_paid.Text = "";
                     }
                 }
             }
@@ -99,7 +111,10 @@ namespace Lab01
                     DialogResult Notification = MessageBox.Show("Xe Winner chỉ sử dụng Xăng RON 95-III. Bạn có muốn chọn lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (Notification == DialogResult.Yes)
                     {
-                        comboBox_fuel.SelectedIndex = -1;
+                        comboBox_vehicle.Items.Clear();
+                        comboBox_fuel.Items.Clear();
+                        textBox_distance.Text = "";
+                        textBox_paid.Text = "";
                     }
                 }
             }
@@ -115,7 +130,10 @@ namespace Lab01
                     DialogResult Notification = MessageBox.Show("Xe AirBlade 150 chỉ sử dụng Xăng RON 95-III. Bạn có muốn chọn lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (Notification == DialogResult.Yes)
                     {
-                        comboBox_fuel.SelectedIndex = -1;
+                        comboBox_vehicle.Items.Clear();
+                        comboBox_fuel.Items.Clear();
+                        textBox_distance.Text = "";
+                        textBox_paid.Text = "";
                     }
                 }
             }
@@ -131,7 +149,10 @@ namespace Lab01
                     DialogResult Notification = MessageBox.Show("Xe tải 9 tấn chỉ sử dụng Dầu DO 0,05S-II. Bạn có muốn chọn lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (Notification == DialogResult.Yes)
                     {
-                        comboBox_fuel.SelectedIndex = -1;
+                        comboBox_vehicle.Items.Clear();
+                        comboBox_fuel.Items.Clear();
+                        textBox_distance.Text = "";
+                        textBox_paid.Text = "";
                     }
                 }
             }

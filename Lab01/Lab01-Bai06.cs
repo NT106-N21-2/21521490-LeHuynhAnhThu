@@ -51,7 +51,7 @@ namespace Lab01
             }
         }
 
-        public int Factorial(int n)
+        public double Factorial(double n)
         {
             if (n == 0)
                 return 1;
@@ -59,22 +59,22 @@ namespace Lab01
                 return n * Factorial(n - 1);
         }
 
-        public int Sum(int n)
+        public double Sum(double n)
         {
-            int sum = 0;
-            for (int i = 1; i <= n; i++)
+            double sum = 0;
+            for (double i = 1; i <= n; i++)
             {
                 sum += i;
             }
             return sum;
         }
 
-        public int SuperSum(int a, int b)
+        public double SuperSum(double a, double b)
         {
-            int sum = 0;
-            for (int i = 1; i <= b; i++)
+            double sum = 0;
+            for (double i = 1; i <= b; i++)
             {
-                sum += (int)Math.Pow(a, i);
+                sum += (double)Math.Pow(a, i);
             }
             return sum;
         }
@@ -96,16 +96,16 @@ namespace Lab01
             }
             else
             {
-                int A = Int32.Parse(textBox_num1.Text);
-                int B = Int32.Parse(textBox_num2.Text);
+                double A = double.Parse(textBox_num1.Text);
+                double B = double.Parse(textBox_num2.Text);
 
-                int factorialA = Factorial(A);
-                int factorialB = Factorial(B);
+                double factorialA = Factorial(A);
+                double factorialB = Factorial(B);
 
-                int sumA = Sum(A);
-                int sumB = Sum(B);
+                double sumA = Sum(A);
+                double sumB = Sum(B);
 
-                int superSumA = SuperSum(A, B);
+                double superSumA = SuperSum(A, B);
 
                 listView_result.Clear();
                 listView_result.Items.Add("A! = " + factorialA);
