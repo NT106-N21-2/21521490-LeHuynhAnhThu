@@ -48,7 +48,7 @@
             button_add = new Button();
             button_back = new Button();
             button_next = new Button();
-            textBox9 = new TextBox();
+            textBox_page = new TextBox();
             SuspendLayout();
             // 
             // richTextBox_input
@@ -214,20 +214,20 @@
             button_next.UseVisualStyleBackColor = true;
             button_next.Click += button_next_Click;
             // 
-            // textBox9
+            // textBox_page
             // 
-            textBox9.Location = new Point(676, 469);
-            textBox9.Name = "textBox9";
-            textBox9.ReadOnly = true;
-            textBox9.Size = new Size(27, 27);
-            textBox9.TabIndex = 28;
+            textBox_page.Location = new Point(676, 469);
+            textBox_page.Name = "textBox_page";
+            textBox_page.ReadOnly = true;
+            textBox_page.Size = new Size(27, 27);
+            textBox_page.TabIndex = 28;
             // 
             // Lab02_Bai04
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(813, 511);
-            Controls.Add(textBox9);
+            Controls.Add(textBox_page);
             Controls.Add(button_next);
             Controls.Add(button_back);
             Controls.Add(button_add);
@@ -276,6 +276,6 @@
         private Button button_add;
         private Button button_back;
         private Button button_next;
-        private TextBox textBox9;
+        private TextBox textBox_page;
     }
 }
