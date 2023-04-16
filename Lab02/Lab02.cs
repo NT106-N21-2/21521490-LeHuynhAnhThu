@@ -43,11 +43,15 @@ namespace Lab02
 
         private void button5_Click(object sender, EventArgs e)
         {
+            Lab02_Bai05 f6 = new Lab02_Bai05();
+            f6.ShowDialog();
         }
 
 
         private void button6_Click(object sender, EventArgs e)
         {
+            Lab02_Bai06 f7 = new Lab02_Bai06();
+            f7.ShowDialog();
         }
     }
 }
