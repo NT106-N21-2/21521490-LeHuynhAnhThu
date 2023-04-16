@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lab02));
             button6 = new Button();
             button5 = new Button();
             button4 = new Button();
@@ -38,13 +39,13 @@
             // 
             // button6
             // 
-            button6.BackColor = Color.FromArgb(252, 248, 241);
+            button6.BackColor = Color.FromArgb(242, 182, 187);
             button6.BackgroundImageLayout = ImageLayout.Center;
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.Location = new Point(472, 313);
+            button6.Location = new Point(682, 399);
             button6.Name = "button6";
-            button6.Size = new Size(285, 47);
+            button6.Size = new Size(181, 78);
             button6.TabIndex = 11;
             button6.Text = "BÀI 06";
             button6.UseVisualStyleBackColor = false;
@@ -52,13 +53,13 @@
             // 
             // button5
             // 
-            button5.BackColor = Color.FromArgb(252, 248, 241);
+            button5.BackColor = Color.FromArgb(242, 182, 187);
             button5.BackgroundImageLayout = ImageLayout.Center;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.Location = new Point(472, 264);
+            button5.Location = new Point(387, 399);
             button5.Name = "button5";
-            button5.Size = new Size(285, 47);
+            button5.Size = new Size(191, 78);
             button5.TabIndex = 10;
             button5.Text = "BÀI 05";
             button5.UseVisualStyleBackColor = false;
@@ -66,13 +67,13 @@
             // 
             // button4
             // 
-            button4.BackColor = Color.FromArgb(252, 248, 241);
+            button4.BackColor = Color.FromArgb(242, 182, 187);
             button4.BackgroundImageLayout = ImageLayout.Center;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(472, 213);
+            button4.Location = new Point(101, 399);
             button4.Name = "button4";
-            button4.Size = new Size(285, 47);
+            button4.Size = new Size(181, 78);
             button4.TabIndex = 9;
             button4.Text = "BÀI 04";
             button4.UseVisualStyleBackColor = false;
@@ -80,13 +81,13 @@
             // 
             // button3
             // 
-            button3.BackColor = Color.FromArgb(252, 248, 241);
+            button3.BackColor = Color.FromArgb(242, 182, 187);
             button3.BackgroundImageLayout = ImageLayout.Center;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(472, 163);
+            button3.Location = new Point(678, 74);
             button3.Name = "button3";
-            button3.Size = new Size(285, 47);
+            button3.Size = new Size(181, 83);
             button3.TabIndex = 8;
             button3.Text = "BÀI 03";
             button3.UseVisualStyleBackColor = false;
@@ -94,13 +95,13 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.FromArgb(252, 248, 241);
+            button2.BackColor = Color.FromArgb(242, 182, 187);
             button2.BackgroundImageLayout = ImageLayout.Center;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(472, 112);
+            button2.Location = new Point(387, 74);
             button2.Name = "button2";
-            button2.Size = new Size(285, 47);
+            button2.Size = new Size(191, 83);
             button2.TabIndex = 7;
             button2.Text = "BÀI 02";
             button2.UseVisualStyleBackColor = false;
@@ -108,13 +109,13 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(252, 248, 241);
+            button1.BackColor = Color.FromArgb(242, 182, 187);
             button1.BackgroundImageLayout = ImageLayout.Center;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(472, 61);
+            button1.Location = new Point(101, 74);
             button1.Name = "button1";
-            button1.Size = new Size(285, 47);
+            button1.Size = new Size(181, 83);
             button1.TabIndex = 6;
             button1.Text = "BÀI 01";
             button1.UseVisualStyleBackColor = false;
@@ -124,7 +125,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(961, 539);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lab02_Bai06));
             treeView_folder = new TreeView();
             richTextBox_file = new RichTextBox();
             pictureBox_file = new PictureBox();
@@ -36,28 +37,32 @@
             // 
             // treeView_folder
             // 
-            treeView_folder.Location = new Point(13, 10);
+            treeView_folder.BackColor = Color.FromArgb(253, 213, 216);
+            treeView_folder.BorderStyle = BorderStyle.None;
+            treeView_folder.Location = new Point(12, 21);
             treeView_folder.Name = "treeView_folder";
-            treeView_folder.Size = new Size(204, 426);
+            treeView_folder.Size = new Size(244, 495);
             treeView_folder.TabIndex = 0;
             treeView_folder.NodeMouseClick += treeView_folder_NodeMouseClick;
             treeView_folder.NodeMouseDoubleClick += treeView_folder_NodeMouseDoubleClick;
             // 
             // richTextBox_file
             // 
-            richTextBox_file.Location = new Point(581, 78);
+            richTextBox_file.BackColor = Color.FromArgb(253, 213, 216);
+            richTextBox_file.BorderStyle = BorderStyle.None;
+            richTextBox_file.Location = new Point(694, 180);
             richTextBox_file.Name = "richTextBox_file";
             richTextBox_file.ReadOnly = true;
-            richTextBox_file.Size = new Size(207, 358);
+            richTextBox_file.Size = new Size(235, 336);
             richTextBox_file.TabIndex = 1;
             richTextBox_file.Text = "";
             // 
             // pictureBox_file
             // 
             pictureBox_file.BackColor = Color.Transparent;
-            pictureBox_file.Location = new Point(223, 78);
+            pictureBox_file.Location = new Point(287, 180);
             pictureBox_file.Name = "pictureBox_file";
-            pictureBox_file.Size = new Size(352, 358);
+            pictureBox_file.Size = new Size(375, 336);
             pictureBox_file.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_file.TabIndex = 2;
             pictureBox_file.TabStop = false;
@@ -66,7 +71,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(961, 539);
             Controls.Add(pictureBox_file);
             Controls.Add(richTextBox_file);
             Controls.Add(treeView_folder);

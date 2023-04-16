@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lab02_Bai05));
             richTextBox_input = new RichTextBox();
             button_zip = new Button();
             button_unzip = new Button();
@@ -35,37 +36,46 @@
             // 
             // richTextBox_input
             // 
-            richTextBox_input.Location = new Point(267, 149);
+            richTextBox_input.BackColor = Color.FromArgb(253, 213, 216);
+            richTextBox_input.BorderStyle = BorderStyle.None;
+            richTextBox_input.Location = new Point(112, 280);
             richTextBox_input.Name = "richTextBox_input";
-            richTextBox_input.Size = new Size(252, 272);
+            richTextBox_input.Size = new Size(710, 237);
             richTextBox_input.TabIndex = 9;
             richTextBox_input.Text = "";
             // 
             // button_zip
             // 
-            button_zip.Location = new Point(79, 30);
+            button_zip.BackColor = Color.FromArgb(242, 182, 187);
+            button_zip.FlatStyle = FlatStyle.Flat;
+            button_zip.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button_zip.Location = new Point(192, 161);
             button_zip.Name = "button_zip";
-            button_zip.Size = new Size(153, 68);
+            button_zip.Size = new Size(141, 68);
             button_zip.TabIndex = 8;
-            button_zip.Text = "NÉN THÀNH FILE";
-            button_zip.UseVisualStyleBackColor = true;
+            button_zip.Text = "NÉN FILE";
+            button_zip.UseVisualStyleBackColor = false;
             button_zip.Click += button_zip_Click;
             // 
             // button_unzip
             // 
-            button_unzip.Location = new Point(569, 30);
+            button_unzip.BackColor = Color.FromArgb(242, 182, 187);
+            button_unzip.FlatStyle = FlatStyle.Flat;
+            button_unzip.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button_unzip.Location = new Point(615, 161);
             button_unzip.Name = "button_unzip";
-            button_unzip.Size = new Size(153, 68);
+            button_unzip.Size = new Size(192, 68);
             button_unzip.TabIndex = 7;
             button_unzip.Text = "GIẢI NÉN FILE";
-            button_unzip.UseVisualStyleBackColor = true;
+            button_unzip.UseVisualStyleBackColor = false;
             button_unzip.Click += button_unzip_Click;
             // 
             // Lab02_Bai05
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(961, 539);
             Controls.Add(richTextBox_input);
             Controls.Add(button_zip);
             Controls.Add(button_unzip);

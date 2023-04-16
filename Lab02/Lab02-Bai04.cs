@@ -26,33 +26,17 @@ namespace Lab02
         private void textBox_id_in_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Nếu người dùng nhập vào ký tự không phải là số và không phải là phím Backspace (ký tự ASCII của phím Backspace là 8)
-            if (!char.IsDigit(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
-                e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Định dạng không hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (Notification == DialogResult.Yes)
-                {
-                    textBox_id_in.Text = "";
-                }
-                else
-                {
-                    this.Hide();
-                }
+                e.Handled = true; // Không cho phép hiển thị ký tự đó trong TextBox
+                MessageBox.Show("Định dạng không hợp lệ. Vui lòng nhập số.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            // Nếu độ dài của chuỗi trong TextBox không bằng 8
-            if (textBox_id_in.Text.Length != 8)
+            // Nếu độ dài của chuỗi trong TextBox khác 8 ký tự
+            if (textBox_id_in.Text.Length != 8 && e.KeyChar != 8)
             {
-                e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Định dạng không hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (Notification == DialogResult.Yes)
-                {
-                    textBox_id_in.Text = "";
-                }
-                else
-                {
-                    this.Hide();
-                }
+                e.Handled = true; // Không cho phép hiển thị ký tự đó trong TextBox
+                MessageBox.Show("Định dạng không hợp lệ. Mã số sinh viên phải có đúng 8 chữ số.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -278,6 +262,7 @@ namespace Lab02
             }
         }
 
+
         [Serializable]
         public class Student
         {
@@ -410,5 +395,6 @@ namespace Lab02
                 textBox_average_out.Text = student.Average.ToString();
             }
         }
+
     }
 }
