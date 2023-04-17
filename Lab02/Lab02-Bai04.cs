@@ -23,45 +23,27 @@ namespace Lab02
             InitializeComponent();
         }
 
-        private void textBox_id_in_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox_id_in_Leave(object sender, EventArgs e)
         {
-            // Nếu người dùng nhập vào ký tự không phải là số và không phải là phím Backspace (ký tự ASCII của phím Backspace là 8)
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            if (textBox_id_in.Text.Length != 8)
             {
-                e.Handled = true; // Không cho phép hiển thị ký tự đó trong TextBox
-                MessageBox.Show("Định dạng không hợp lệ. Vui lòng nhập số.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-            // Nếu độ dài của chuỗi trong TextBox khác 8 ký tự
-            if (textBox_id_in.Text.Length != 8 && e.KeyChar != 8)
-            {
-                e.Handled = true; // Không cho phép hiển thị ký tự đó trong TextBox
-                MessageBox.Show("Định dạng không hợp lệ. Mã số sinh viên phải có đúng 8 chữ số.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void textBox_phone_in_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Nếu người dùng nhập vào ký tự không phải là số và không phải là phím Backspace (ký tự ASCII của phím Backspace là 8)
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
-            {
-                e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Định dạng không hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult Notification = MessageBox.Show("MSSV phải là một số có 8 chữ số. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Notification == DialogResult.Yes)
                 {
-                    textBox_phone_in.Text = "";
+                    textBox_id_in.Text = "";
                 }
                 else
                 {
                     this.Hide();
                 }
             }
+        }
 
-            // Nếu người dùng nhập vào ký tự thứ 11 (và sau đó) hoặc ký tự đầu tiên không phải là số 0
-            if (textBox_phone_in.Text.Length == 10 && textBox_phone_in.Text[0] != '0')
+        private void textBox_phone_in_Leave(object sender, EventArgs e)
+        {
+            if (textBox_phone_in.Text.Length != 10 || !textBox_phone_in.Text.StartsWith("0"))
             {
-                e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Định dạng không hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult Notification = MessageBox.Show("Số điện thoại phải có 10 chữ số và bắt đầu bởi số 0. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Notification == DialogResult.Yes)
                 {
                     textBox_phone_in.Text = "";
@@ -73,57 +55,27 @@ namespace Lab02
             }
         }
 
-        private void textBox_course1_in_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox_course1_in_Leave(object sender, EventArgs e)
         {
-            // Nếu người dùng nhập vào ký tự không phải là số, không phải là phím Backspace (ký tự ASCII của phím Backspace là 8), và không phải là dấu chấm (phần thập phân)
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != '.')
+            float mark;
+
+            if (float.TryParse(textBox_course1_in.Text, out mark))
             {
-                e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Định dạng không hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (Notification == DialogResult.Yes)
+                if (mark < 0 || mark > 10)
                 {
-                    textBox_course1_in.Text = "";
-                }
-                else
-                {
-                    this.Hide();
+                    DialogResult Notification = MessageBox.Show("Điểm phải nằm trong khoảng từ 0 đến 10. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (Notification == DialogResult.Yes)
+                    {
+                        textBox_course1_in.Text = "";
+                    }
+                    else
+                    {
+                        this.Hide();
+                    }
                 }
             }
-
-            // Nếu người dùng nhập vào dấu chấm (phần thập phân) và đã có một dấu chấm trong chuỗi
-            if (e.KeyChar == '.' && textBox_course1_in.Text.Contains("."))
+            else
             {
-                e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Định dạng không hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (Notification == DialogResult.Yes)
-                {
-                    textBox_course1_in.Text = "";
-                }
-                else
-                {
-                    this.Hide();
-                }
-            }
-
-            // Nếu độ dài của chuỗi trong TextBox lớn hơn hoặc bằng 3 (bao gồm cả dấu chấm)
-            if (textBox_course1_in.Text.Length >= 3)
-            {
-                e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Định dạng không hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (Notification == DialogResult.Yes)
-                {
-                    textBox_course1_in.Text = "";
-                }
-                else
-                {
-                    this.Hide();
-                }
-            }
-
-            // Nếu giá trị của chuỗi trong TextBox lớn hơn 10
-            if (double.Parse(textBox_course1_in.Text) < 0 || double.Parse(textBox_course1_in.Text) > 10)
-            {
-                e.Handled = true;
                 DialogResult Notification = MessageBox.Show("Định dạng không hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Notification == DialogResult.Yes)
                 {
@@ -136,57 +88,27 @@ namespace Lab02
             }
         }
 
-        private void textBox_course2_in_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox_course2_in_Leave(object sender, EventArgs e)
         {
-            // Nếu người dùng nhập vào ký tự không phải là số, không phải là phím Backspace (ký tự ASCII của phím Backspace là 8), và không phải là dấu chấm (phần thập phân)
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != '.')
+            float mark;
+
+            if (float.TryParse(textBox_course1_in.Text, out mark))
             {
-                e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Định dạng không hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (Notification == DialogResult.Yes)
+                if (mark < 0 || mark > 10)
                 {
-                    textBox_course2_in.Text = "";
-                }
-                else
-                {
-                    this.Hide();
+                    DialogResult Notification = MessageBox.Show("Điểm phải nằm trong khoảng từ 0 đến 10. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (Notification == DialogResult.Yes)
+                    {
+                        textBox_course2_in.Text = "";
+                    }
+                    else
+                    {
+                        this.Hide();
+                    }
                 }
             }
-
-            // Nếu người dùng nhập vào dấu chấm (phần thập phân) và đã có một dấu chấm trong chuỗi
-            if (e.KeyChar == '.' && textBox_course2_in.Text.Contains("."))
+            else
             {
-                e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Định dạng không hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (Notification == DialogResult.Yes)
-                {
-                    textBox_course2_in.Text = "";
-                }
-                else
-                {
-                    this.Hide();
-                }
-            }
-
-            // Nếu độ dài của chuỗi trong TextBox lớn hơn hoặc bằng 3 (bao gồm cả dấu chấm)
-            if (textBox_course2_in.Text.Length >= 3)
-            {
-                e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Định dạng không hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (Notification == DialogResult.Yes)
-                {
-                    textBox_course2_in.Text = "";
-                }
-                else
-                {
-                    this.Hide();
-                }
-            }
-
-            // Nếu giá trị của chuỗi trong TextBox lớn hơn 10
-            if (double.Parse(textBox_course2_in.Text) < 0 || double.Parse(textBox_course2_in.Text) > 10)
-            {
-                e.Handled = true;
                 DialogResult Notification = MessageBox.Show("Định dạng không hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Notification == DialogResult.Yes)
                 {
@@ -199,57 +121,27 @@ namespace Lab02
             }
         }
 
-        private void textBox_course3_in_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox_course3_in_Leave(object sender, EventArgs e)
         {
-            // Nếu người dùng nhập vào ký tự không phải là số, không phải là phím Backspace (ký tự ASCII của phím Backspace là 8), và không phải là dấu chấm (phần thập phân)
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != '.')
+            float mark;
+
+            if (float.TryParse(textBox_course1_in.Text, out mark))
             {
-                e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Định dạng không hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (Notification == DialogResult.Yes)
+                if (mark < 0 || mark > 10)
                 {
-                    textBox_course3_in.Text = "";
-                }
-                else
-                {
-                    this.Hide();
+                    DialogResult Notification = MessageBox.Show("Điểm phải nằm trong khoảng từ 0 đến 10. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (Notification == DialogResult.Yes)
+                    {
+                        textBox_course3_in.Text = "";
+                    }
+                    else
+                    {
+                        this.Hide();
+                    }
                 }
             }
-
-            // Nếu người dùng nhập vào dấu chấm (phần thập phân) và đã có một dấu chấm trong chuỗi
-            if (e.KeyChar == '.' && textBox_course3_in.Text.Contains("."))
+            else
             {
-                e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Định dạng không hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (Notification == DialogResult.Yes)
-                {
-                    textBox_course3_in.Text = "";
-                }
-                else
-                {
-                    this.Hide();
-                }
-            }
-
-            // Nếu độ dài của chuỗi trong TextBox lớn hơn hoặc bằng 3 (bao gồm cả dấu chấm)
-            if (textBox_course3_in.Text.Length >= 3)
-            {
-                e.Handled = true;
-                DialogResult Notification = MessageBox.Show("Định dạng không hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (Notification == DialogResult.Yes)
-                {
-                    textBox_course3_in.Text = "";
-                }
-                else
-                {
-                    this.Hide();
-                }
-            }
-
-            // Nếu giá trị của chuỗi trong TextBox lớn hơn 10
-            if (double.Parse(textBox_course3_in.Text) < 0 || double.Parse(textBox_course3_in.Text) > 10)
-            {
-                e.Handled = true;
                 DialogResult Notification = MessageBox.Show("Định dạng không hợp lệ. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Notification == DialogResult.Yes)
                 {
@@ -261,23 +153,22 @@ namespace Lab02
                 }
             }
         }
-
 
         [Serializable]
         public class Student
         {
             public string Name { get; set; }
-            public string Id { get; set; }
+            public int Id { get; set; }
             public string Phone { get; set; }
-            public string Course1 { get; set; }
-            public string Course2 { get; set; }
-            public string Course3 { get; set; }
-            public string Average { get; set; }
+            public float Course1 { get; set; }
+            public float Course2 { get; set; }
+            public float Course3 { get; set; }
+            public float Average { get; set; }
         }
 
         private int currentPage = 0; // số trang hiện tại
         private int maxPage = 0; // tối đa số trang hiển thị
-        private List<Student> students; // danh sách sinh viên
+        private List<Student> students = new List<Student>(); // danh sách sinh viên
 
         private void button_add_Click(object sender, EventArgs e)
         {
@@ -292,11 +183,11 @@ namespace Lab02
             // Tạo một đối tượng sinh viên mới
             Student student = new Student();
             student.Name = name;
-            student.Id = id;
+            student.Id = int.Parse(id);
             student.Phone = phone;
-            student.Course1 = course1;
-            student.Course2 = course2;
-            student.Course3 = course3;
+            student.Course1 = float.Parse(course1);
+            student.Course2 = float.Parse(course2);
+            student.Course3 = float.Parse(course3);
 
             // Thêm sinh viên vào danh sách
             students.Add(student);
@@ -330,6 +221,20 @@ namespace Lab02
             ofd.ShowDialog();
             FileStream fs = new FileStream(ofd.FileName, FileMode.Open);
 
+            // Kiểm tra xem file có rỗng hay không
+            if (fs.Length == 0)
+            {
+                DialogResult Notification = MessageBox.Show("File rỗng. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Notification == DialogResult.Yes)
+                {
+                    ofd.ShowDialog();
+                }
+                else
+                {
+                    this.Hide();
+                }
+            }
+
             // Đọc danh sách sinh viên từ file
             BinaryFormatter formatter = new BinaryFormatter();
             students = (List<Student>)formatter.Deserialize(fs);
@@ -339,8 +244,8 @@ namespace Lab02
             for (int i = 0; i < students.Count; i++)
             {
                 Student student = students[i];
-                double average = (double)(double.Parse(student.Course1) + double.Parse(student.Course2) + double.Parse(student.Course3)) / 3;
-                student.Average = average.ToString();
+                float average = (student.Course1 + student.Course2 + student.Course3) / 3;
+                student.Average = average;
                 students[i] = student;
             }
 
@@ -350,10 +255,14 @@ namespace Lab02
             // Xuất dữ liệu cho trang đầu tiên
             ShowStudentByPage(0);
 
+            // Chọn folder lưu file
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.ShowDialog();
+            string filePath = Path.Combine(fbd.SelectedPath, "output4.txt");
+
             // Ghi danh sách sinh viên đã tính điểm trung bình xuống file
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.ShowDialog();
-            fs = new FileStream(sfd.FileName, FileMode.Create);
+            fs = new FileStream(filePath, FileMode.Create);
+            formatter = new BinaryFormatter();
             formatter.Serialize(fs, students);
             fs.Close();
         }
@@ -379,12 +288,15 @@ namespace Lab02
         // Hiển thị dữ liệu sinh viên cho trang tương ứng
         private void ShowStudentByPage(int page)
         {
+            richTextBox_output.Clear();
             int startIndex = page * 1; // giả sử hiển thị 1 sinh viên mỗi trang
             int endIndex = Math.Min(startIndex + 1, students.Count);
 
             for (int i = startIndex; i < endIndex; i++)
             {
                 Student student = students[i];
+
+                // Hiển thị lên textBox
                 textBox_page.Text = (currentPage + 1).ToString();
                 textBox_name_out.Text = student.Name.ToString();
                 textBox_id_out.Text = student.Id.ToString();
@@ -394,7 +306,18 @@ namespace Lab02
                 textBox_course3_out.Text = student.Course3.ToString();
                 textBox_average_out.Text = student.Average.ToString();
             }
-        }
 
+            // Hiển thị lên richTextBox
+            foreach (Student student in students)
+            {
+                richTextBox_output.AppendText($"Họ và tên: {student.Name}\n");
+                richTextBox_output.AppendText($"MSSV: {student.Id}\n");
+                richTextBox_output.AppendText($"Số điện thoại: {student.Phone}\n");
+                richTextBox_output.AppendText($"Môn 1: {student.Course1}\n");
+                richTextBox_output.AppendText($"Môn 2: {student.Course2}\n");
+                richTextBox_output.AppendText($"Môn 3: {student.Course3}\n");
+                richTextBox_output.AppendText($"Điểm trung bình: {student.Average}\n\n");
+            }
+        }
     }
 }

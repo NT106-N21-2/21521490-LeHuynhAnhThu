@@ -24,6 +24,21 @@ namespace Lab02
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.ShowDialog();
             FileStream fs = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
+
+            // Kiểm tra xem file có rỗng hay không
+            if (fs.Length == 0)
+            {
+                DialogResult Notification = MessageBox.Show("File rỗng. Bạn có muốn thử lại không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Notification == DialogResult.Yes)
+                {
+                    ofd.ShowDialog();
+                }
+                else
+                {
+                    this.Hide();
+                }
+            }
+
             StreamReader sr = new StreamReader(fs);
 
             // Đọc nội dung file vào chuỗi content
