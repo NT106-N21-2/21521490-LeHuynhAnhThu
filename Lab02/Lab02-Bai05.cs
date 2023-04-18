@@ -47,6 +47,8 @@ namespace Lab02
             s.Close();
             ar.Dispose();
             fs.Close();
+
+            MessageBox.Show("Đã nén file thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button_unzip_Click(object sender, EventArgs e)
@@ -65,6 +67,8 @@ namespace Lab02
 
             // Giải nén file output5.zip vào thư mục đích
             ZipFile.ExtractToDirectory(zipFilePath, extractPath);
+
+            MessageBox.Show("Đã giải nén file thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
