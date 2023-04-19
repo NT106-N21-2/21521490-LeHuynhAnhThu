@@ -133,11 +133,6 @@ namespace Lab02
                 Console.WriteLine("Error: " + ex.Message);
             }
         }
-
-        private void Lab02_Bai06_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 
