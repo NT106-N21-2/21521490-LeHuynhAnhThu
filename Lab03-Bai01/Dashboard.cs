@@ -22,12 +22,14 @@ namespace Lab03_Bai01
         {
             UDPClient formClient = new UDPClient();
             formClient.Show();
+            button_clent.Enabled = false;
         }
 
         private void button_server_Click(object sender, EventArgs e)
         {
             UDPServer formServer = new UDPServer();
             formServer.Show();
+            button_server.Enabled = false;
         }
     }
 }
