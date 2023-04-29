@@ -11,7 +11,7 @@ using System.Net.Sockets;
 
 namespace Lab03_Bai04
 {
-    public partial class Client : Form
+    public partial class Client : Form  
     {
         TcpClient client = null;
         int port = 8080;
