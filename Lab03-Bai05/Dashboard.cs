@@ -22,7 +22,6 @@ namespace Lab03_Bai05
             // Show the server form
             ServerForm serverForm = new ServerForm();
             serverForm.Show();
-            button_server.Enabled = false;
         }
 
         private void button_client_Click(object sender, EventArgs e)
