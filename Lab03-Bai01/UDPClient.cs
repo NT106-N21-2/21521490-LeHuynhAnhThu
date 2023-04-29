@@ -40,5 +40,10 @@ namespace Lab03_Bai01
                 MessageBox.Show(ex.Message, "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void richTextBox_message_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,59 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox_ip = new TextBox();
-            textBox_port = new TextBox();
-            richTextBox_message = new RichTextBox();
-            button_send = new Button();
-            SuspendLayout();
+            this.textBox_ip = new System.Windows.Forms.TextBox();
+            this.textBox_port = new System.Windows.Forms.TextBox();
+            this.richTextBox_message = new System.Windows.Forms.RichTextBox();
+            this.button_send = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // textBox_ip
             // 
-            textBox_ip.Location = new Point(58, 69);
-            textBox_ip.Name = "textBox_ip";
-            textBox_ip.ReadOnly = true;
-            textBox_ip.Size = new Size(264, 27);
-            textBox_ip.TabIndex = 0;
+            this.textBox_ip.Location = new System.Drawing.Point(58, 69);
+            this.textBox_ip.Name = "textBox_ip";
+            this.textBox_ip.ReadOnly = true;
+            this.textBox_ip.Size = new System.Drawing.Size(264, 27);
+            this.textBox_ip.TabIndex = 0;
             // 
             // textBox_port
             // 
-            textBox_port.Location = new Point(577, 69);
-            textBox_port.Name = "textBox_port";
-            textBox_port.ReadOnly = true;
-            textBox_port.Size = new Size(157, 27);
-            textBox_port.TabIndex = 1;
+            this.textBox_port.Location = new System.Drawing.Point(577, 69);
+            this.textBox_port.Name = "textBox_port";
+            this.textBox_port.ReadOnly = true;
+            this.textBox_port.Size = new System.Drawing.Size(157, 27);
+            this.textBox_port.TabIndex = 1;
             // 
             // richTextBox_message
             // 
-            richTextBox_message.Location = new Point(58, 177);
-            richTextBox_message.Name = "richTextBox_message";
-            richTextBox_message.Size = new Size(676, 176);
-            richTextBox_message.TabIndex = 2;
-            richTextBox_message.Text = "";
+            this.richTextBox_message.Location = new System.Drawing.Point(58, 177);
+            this.richTextBox_message.Name = "richTextBox_message";
+            this.richTextBox_message.Size = new System.Drawing.Size(676, 176);
+            this.richTextBox_message.TabIndex = 2;
+            this.richTextBox_message.Text = "";
+            this.richTextBox_message.TextChanged += new System.EventHandler(this.richTextBox_message_TextChanged);
             // 
             // button_send
             // 
-            button_send.Location = new Point(60, 398);
-            button_send.Name = "button_send";
-            button_send.Size = new Size(110, 27);
-            button_send.TabIndex = 3;
-            button_send.Text = "Send";
-            button_send.UseVisualStyleBackColor = true;
-            button_send.Click += button_send_Click;
+            this.button_send.Location = new System.Drawing.Point(60, 398);
+            this.button_send.Name = "button_send";
+            this.button_send.Size = new System.Drawing.Size(110, 27);
+            this.button_send.TabIndex = 3;
+            this.button_send.Text = "Send";
+            this.button_send.UseVisualStyleBackColor = true;
             // 
             // UDPClient
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button_send);
-            Controls.Add(richTextBox_message);
-            Controls.Add(textBox_port);
-            Controls.Add(textBox_ip);
-            Name = "UDPClient";
-            Text = "UDPClient";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button_send);
+            this.Controls.Add(this.richTextBox_message);
+            this.Controls.Add(this.textBox_port);
+            this.Controls.Add(this.textBox_ip);
+            this.Name = "UDPClient";
+            this.Text = "UDPClient";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
