@@ -55,7 +55,7 @@ namespace Lab03_Bai04
             }
         }
         private void ReceiveMessages(TcpClient client)
-        {
+        { 
             try
             {
                 byte[] bytes = new byte[1024];
