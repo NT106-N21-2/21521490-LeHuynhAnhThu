@@ -26,26 +26,6 @@ namespace Lab03_Bai04
             InitializeComponent();
         }
 
-        private void Server2_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                // Connect to the specified server and port.
-                client = new TcpClient();
-                client.Connect("localhost", port);
-
-                // Set the isConnected flag to true.
-                isConnected = true;
-
-                // Start receiving messages from the server.
-                ReceiveMessages(client);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void Listen_Click(object sender, EventArgs e)
         {
 
@@ -179,6 +159,11 @@ namespace Lab03_Bai04
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Server2_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

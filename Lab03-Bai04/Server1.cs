@@ -25,11 +25,6 @@ namespace Lab03_Bai04
         {
             InitializeComponent();
         }
-   
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void Listen_Click(object sender, EventArgs e)
         {
