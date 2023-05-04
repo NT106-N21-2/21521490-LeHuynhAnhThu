@@ -28,38 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bai05_Dashboard));
             button_client = new Button();
             button_server = new Button();
             SuspendLayout();
             // 
             // button_client
             // 
-            button_client.Location = new Point(549, 203);
+            button_client.BackColor = Color.Transparent;
+            button_client.FlatAppearance.BorderSize = 0;
+            button_client.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_client.FlatStyle = FlatStyle.Flat;
+            button_client.Location = new Point(82, 179);
             button_client.Name = "button_client";
-            button_client.Size = new Size(175, 44);
+            button_client.Size = new Size(198, 178);
             button_client.TabIndex = 3;
-            button_client.Text = "Client";
-            button_client.UseVisualStyleBackColor = true;
+            button_client.UseVisualStyleBackColor = false;
             button_client.Click += button_client_Click;
             // 
             // button_server
             // 
-            button_server.Location = new Point(76, 203);
+            button_server.BackColor = Color.Transparent;
+            button_server.FlatAppearance.BorderSize = 0;
+            button_server.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_server.FlatStyle = FlatStyle.Flat;
+            button_server.Location = new Point(552, 179);
             button_server.Name = "button_server";
-            button_server.Size = new Size(175, 44);
+            button_server.Size = new Size(188, 178);
             button_server.TabIndex = 2;
-            button_server.Text = "Server";
-            button_server.UseVisualStyleBackColor = true;
+            button_server.UseVisualStyleBackColor = false;
             button_server.Click += button_server_Click;
             // 
-            // Dashboard
+            // Bai05_Dashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(800, 485);
             Controls.Add(button_client);
             Controls.Add(button_server);
-            Name = "Dashboard";
+            Name = "Bai05_Dashboard";
             Text = "Dashboard";
             ResumeLayout(false);
         }

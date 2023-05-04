@@ -48,7 +48,7 @@ namespace Lab03_Bai03
             try
             {
                 client.Connect(IPAddress.Loopback, 8080);
-                MessageBox.Show("Connected to server","OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Connected to server", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -80,6 +80,11 @@ namespace Lab03_Bai03
             {
                 MessageBox.Show("Error sending message: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

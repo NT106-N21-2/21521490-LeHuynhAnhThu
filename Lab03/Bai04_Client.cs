@@ -77,5 +77,20 @@ namespace Lab03
                 richTextBox1.Clear();
             }
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Bai04_Client_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

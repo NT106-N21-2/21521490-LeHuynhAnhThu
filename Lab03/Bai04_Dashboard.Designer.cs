@@ -28,35 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bai04_Dashboard));
             button2 = new Button();
             button1 = new Button();
             SuspendLayout();
             // 
             // button2
             // 
-            button2.Location = new Point(79, 159);
+            button2.BackColor = Color.Transparent;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Location = new Point(637, 224);
             button2.Name = "button2";
-            button2.Size = new Size(259, 133);
+            button2.Size = new Size(140, 65);
             button2.TabIndex = 3;
-            button2.Text = "Server";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(477, 159);
+            button1.BackColor = Color.Transparent;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(54, 226);
             button1.Name = "button1";
-            button1.Size = new Size(245, 133);
+            button1.Size = new Size(138, 63);
             button1.TabIndex = 2;
-            button1.Text = "Client";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // Bai04_Dashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(822, 450);
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "Bai04_Dashboard";

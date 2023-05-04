@@ -42,5 +42,10 @@ namespace Lab03
             Bai05_Dashboard f6 = new Bai05_Dashboard();
             f6.ShowDialog();
         }
+
+        private void Lab03_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

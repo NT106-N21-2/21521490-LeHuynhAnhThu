@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bai05_ClientForm));
             textBox_message = new TextBox();
             button_send = new Button();
             richTextBox_chat = new RichTextBox();
@@ -36,46 +37,56 @@
             // 
             // textBox_message
             // 
-            textBox_message.Location = new Point(36, 342);
+            textBox_message.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox_message.Location = new Point(447, 358);
             textBox_message.Name = "textBox_message";
-            textBox_message.Size = new Size(291, 27);
+            textBox_message.Size = new Size(260, 27);
             textBox_message.TabIndex = 0;
+            textBox_message.TextChanged += textBox_message_TextChanged;
             // 
             // button_send
             // 
-            button_send.Location = new Point(363, 342);
+            button_send.BackColor = Color.Transparent;
+            button_send.FlatAppearance.BorderSize = 0;
+            button_send.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_send.FlatStyle = FlatStyle.Flat;
+            button_send.Location = new Point(511, 415);
             button_send.Name = "button_send";
-            button_send.Size = new Size(90, 31);
+            button_send.Size = new Size(90, 55);
             button_send.TabIndex = 1;
-            button_send.Text = "Send";
-            button_send.UseVisualStyleBackColor = true;
+            button_send.UseVisualStyleBackColor = false;
             button_send.Click += button_send_Click;
             // 
             // richTextBox_chat
             // 
-            richTextBox_chat.Location = new Point(26, 21);
+            richTextBox_chat.BorderStyle = BorderStyle.None;
+            richTextBox_chat.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            richTextBox_chat.Location = new Point(326, 120);
             richTextBox_chat.Name = "richTextBox_chat";
-            richTextBox_chat.Size = new Size(649, 199);
+            richTextBox_chat.Size = new Size(422, 126);
             richTextBox_chat.TabIndex = 2;
             richTextBox_chat.Text = "";
             // 
             // textBox_name
             // 
-            textBox_name.Location = new Point(41, 296);
+            textBox_name.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox_name.Location = new Point(451, 297);
             textBox_name.Name = "textBox_name";
-            textBox_name.Size = new Size(229, 27);
+            textBox_name.Size = new Size(150, 27);
             textBox_name.TabIndex = 0;
+            textBox_name.TextChanged += textBox_name_TextChanged;
             // 
-            // ClientForm
+            // Bai05_ClientForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(800, 481);
             Controls.Add(textBox_name);
             Controls.Add(richTextBox_chat);
             Controls.Add(button_send);
             Controls.Add(textBox_message);
-            Name = "ClientForm";
+            Name = "Bai05_ClientForm";
             Text = "ClientForm";
             FormClosing += ClientForm_FormClosing;
             Load += ClientForm_Load;

@@ -91,7 +91,7 @@ namespace Lab03_Bai05
                     Broadcast(messageBytesWithPrefix);
                 }
             }
-            catch (Exception ex) {}
+            catch (Exception ex) { }
         }
 
         private void Broadcast(byte[] message)

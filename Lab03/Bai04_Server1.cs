@@ -98,5 +98,10 @@ namespace Lab03
 
             server2.Show();
         }
+
+        private void Bai04_Server1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

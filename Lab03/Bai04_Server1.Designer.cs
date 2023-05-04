@@ -28,38 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bai04_Server1));
             richTextBox1 = new RichTextBox();
             button_listen = new Button();
             SuspendLayout();
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(96, 163);
+            richTextBox1.BorderStyle = BorderStyle.None;
+            richTextBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            richTextBox1.Location = new Point(148, 197);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(609, 212);
+            richTextBox1.Size = new Size(539, 178);
             richTextBox1.TabIndex = 3;
             richTextBox1.Text = "";
             // 
             // button_listen
             // 
-            button_listen.Location = new Point(291, 76);
+            button_listen.BackColor = Color.Transparent;
+            button_listen.FlatStyle = FlatStyle.Flat;
+            button_listen.Location = new Point(330, 412);
             button_listen.Name = "button_listen";
-            button_listen.Size = new Size(180, 45);
+            button_listen.Size = new Size(134, 45);
             button_listen.TabIndex = 2;
-            button_listen.Text = "Listen";
-            button_listen.UseVisualStyleBackColor = true;
+            button_listen.UseVisualStyleBackColor = false;
             button_listen.Click += button_listen_Click;
             // 
             // Bai04_Server1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(800, 469);
             Controls.Add(richTextBox1);
             Controls.Add(button_listen);
             Name = "Bai04_Server1";
             Text = "Bai04_Server1";
             FormClosing += Bai04_Server1_FormClosing;
+            Load += Bai04_Server1_Load;
             ResumeLayout(false);
         }
 

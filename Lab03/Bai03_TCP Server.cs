@@ -81,5 +81,15 @@ namespace Lab03_Bai03
                 richTextBox1.AppendText(message + Environment.NewLine); //nếu có thể truy cập trực tiếp thì message được thêm vào cuối 
             }
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TCP_Server_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

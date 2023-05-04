@@ -28,39 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bai02_Telnet));
+            button1 = new Button();
+            richTextBox1 = new RichTextBox();
+            SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(561, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Listen";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Listen_Click);
+            button1.BackColor = Color.Transparent;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(389, 356);
+            button1.Name = "button1";
+            button1.Size = new Size(87, 95);
+            button1.TabIndex = 0;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += Listen_Click;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(55, 193);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(662, 216);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            richTextBox1.BackColor = Color.White;
+            richTextBox1.BorderStyle = BorderStyle.None;
+            richTextBox1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            richTextBox1.Location = new Point(90, 192);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(256, 141);
+            richTextBox1.TabIndex = 1;
+            richTextBox1.Text = "";
             // 
-            // Telnet
+            // Bai02_Telnet
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button1);
-            this.Name = "Telnet";
-            this.Text = "Telnet";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(800, 450);
+            Controls.Add(richTextBox1);
+            Controls.Add(button1);
+            Name = "Bai02_Telnet";
+            Text = "Telnet";
+            ResumeLayout(false);
         }
 
         #endregion

@@ -28,36 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bai05_ServerForm));
             button_listen = new Button();
             richTextBox_server = new RichTextBox();
             SuspendLayout();
             // 
             // button_listen
             // 
-            button_listen.Location = new Point(605, 64);
+            button_listen.BackColor = Color.Transparent;
+            button_listen.FlatAppearance.BorderSize = 0;
+            button_listen.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_listen.FlatStyle = FlatStyle.Flat;
+            button_listen.Location = new Point(95, 337);
             button_listen.Name = "button_listen";
-            button_listen.Size = new Size(94, 29);
+            button_listen.Size = new Size(123, 47);
             button_listen.TabIndex = 0;
-            button_listen.Text = "Listen";
-            button_listen.UseVisualStyleBackColor = true;
+            button_listen.TextImageRelation = TextImageRelation.TextBeforeImage;
+            button_listen.UseVisualStyleBackColor = false;
             button_listen.Click += button_listen_Click;
             // 
             // richTextBox_server
             // 
-            richTextBox_server.Location = new Point(76, 126);
+            richTextBox_server.BorderStyle = BorderStyle.None;
+            richTextBox_server.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            richTextBox_server.Location = new Point(330, 120);
             richTextBox_server.Name = "richTextBox_server";
-            richTextBox_server.Size = new Size(649, 282);
+            richTextBox_server.Size = new Size(411, 264);
             richTextBox_server.TabIndex = 3;
             richTextBox_server.Text = "";
             // 
-            // ServerForm
+            // Bai05_ServerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(800, 440);
             Controls.Add(richTextBox_server);
             Controls.Add(button_listen);
-            Name = "ServerForm";
+            Name = "Bai05_ServerForm";
             Text = "ServerForm";
             FormClosing += ServerForm_FormClosing;
             ResumeLayout(false);

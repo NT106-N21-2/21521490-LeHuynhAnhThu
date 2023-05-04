@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bai04_Client));
             richTextBox1 = new RichTextBox();
             button_disconnect = new Button();
             button_send = new Button();
@@ -36,53 +37,64 @@
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(282, 102);
+            richTextBox1.BorderStyle = BorderStyle.None;
+            richTextBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            richTextBox1.Location = new Point(177, 187);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(466, 247);
+            richTextBox1.Size = new Size(466, 162);
             richTextBox1.TabIndex = 7;
             richTextBox1.Text = "";
+            richTextBox1.TextChanged += richTextBox1_TextChanged;
             // 
             // button_disconnect
             // 
-            button_disconnect.Location = new Point(53, 271);
+            button_disconnect.BackColor = Color.Transparent;
+            button_disconnect.FlatAppearance.BorderSize = 0;
+            button_disconnect.FlatStyle = FlatStyle.Flat;
+            button_disconnect.Location = new Point(509, 348);
             button_disconnect.Name = "button_disconnect";
-            button_disconnect.Size = new Size(128, 61);
+            button_disconnect.Size = new Size(117, 41);
             button_disconnect.TabIndex = 6;
-            button_disconnect.Text = "Disconnect";
-            button_disconnect.UseVisualStyleBackColor = true;
+            button_disconnect.UseVisualStyleBackColor = false;
             button_disconnect.Click += button_disconnect_Click;
             // 
             // button_send
             // 
-            button_send.Location = new Point(53, 187);
+            button_send.BackColor = Color.Transparent;
+            button_send.FlatAppearance.BorderSize = 0;
+            button_send.FlatStyle = FlatStyle.Flat;
+            button_send.Location = new Point(376, 348);
             button_send.Name = "button_send";
-            button_send.Size = new Size(128, 59);
+            button_send.Size = new Size(116, 39);
             button_send.TabIndex = 5;
-            button_send.Text = "Send";
-            button_send.UseVisualStyleBackColor = true;
+            button_send.UseVisualStyleBackColor = false;
             button_send.Click += button_send_Click;
             // 
             // button_connect
             // 
-            button_connect.Location = new Point(53, 102);
+            button_connect.BackColor = Color.Transparent;
+            button_connect.FlatAppearance.BorderSize = 0;
+            button_connect.FlatStyle = FlatStyle.Flat;
+            button_connect.Location = new Point(236, 348);
             button_connect.Name = "button_connect";
-            button_connect.Size = new Size(128, 56);
+            button_connect.Size = new Size(117, 39);
             button_connect.TabIndex = 4;
-            button_connect.Text = "Connect";
-            button_connect.UseVisualStyleBackColor = true;
+            button_connect.UseVisualStyleBackColor = false;
             button_connect.Click += button_connect_Click;
             // 
             // Bai04_Client
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(819, 450);
             Controls.Add(richTextBox1);
             Controls.Add(button_disconnect);
             Controls.Add(button_send);
             Controls.Add(button_connect);
             Name = "Bai04_Client";
             Text = "Bai04_Client";
+            Load += Bai04_Client_Load;
             ResumeLayout(false);
         }
 

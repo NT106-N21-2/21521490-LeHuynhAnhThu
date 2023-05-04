@@ -58,5 +58,10 @@ namespace Lab03_Bai01
             udpServerThread.Start();
             udpServerThread.IsBackground = true;
         }
+
+        private void Bai01_UDPServer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

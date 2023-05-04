@@ -28,37 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TCP_Server));
             button1 = new Button();
             richTextBox1 = new RichTextBox();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(278, 75);
+            button1.BackColor = Color.Transparent;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(505, 289);
             button1.Name = "button1";
-            button1.Size = new Size(180, 45);
+            button1.Size = new Size(115, 43);
             button1.TabIndex = 0;
-            button1.Text = "Listen";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += ListenButton_Click;
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(83, 162);
+            richTextBox1.BackColor = Color.White;
+            richTextBox1.BorderStyle = BorderStyle.None;
+            richTextBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            richTextBox1.ForeColor = Color.Navy;
+            richTextBox1.Location = new Point(368, 94);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(609, 212);
+            richTextBox1.Size = new Size(391, 189);
             richTextBox1.TabIndex = 1;
             richTextBox1.Text = "";
+            richTextBox1.TextChanged += richTextBox1_TextChanged;
             // 
             // TCP_Server
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.ButtonHighlight;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(819, 475);
             Controls.Add(richTextBox1);
             Controls.Add(button1);
             Name = "TCP_Server";
             Text = "TCP_Server";
+            Load += TCP_Server_Load;
             ResumeLayout(false);
         }
 
