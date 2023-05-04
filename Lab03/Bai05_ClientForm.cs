@@ -92,15 +92,5 @@ namespace Lab03_Bai05
             // Close the client connection
             client.Close();
         }
-
-        private void textBox_name_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_message_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
