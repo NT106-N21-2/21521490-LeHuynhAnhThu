@@ -52,6 +52,7 @@
             button_listen.Size = new Size(130, 42);
             button_listen.TabIndex = 6;
             button_listen.UseVisualStyleBackColor = false;
+            button_listen.Click += button_listen_Click;
             // 
             // Bai04_Server2
             // 

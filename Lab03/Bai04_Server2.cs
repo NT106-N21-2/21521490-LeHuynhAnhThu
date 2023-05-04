@@ -20,18 +20,7 @@ namespace Lab03
             InitializeComponent();
         }
 
-        private void button_listen_Click(object sender, EventArgs e)
-        {
-            button_listen.Enabled = false;
-            //Kiểm tra đối tượng listener được khởi tạo chưa
-            if (listener == null)
-            {
-                listener = new TcpListener(IPAddress.Loopback, 8080);
-                listener.Start();
-                MessageBox.Show("Listening for connections", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                AcceptClients();
-            }
-        }
+
 
         //Chấp nhận kết nối từ client cho đến khi server bị ngắt kết nối  
         private async void AcceptClients()
@@ -78,6 +67,19 @@ namespace Lab03
             else
             {
                 richTextBox1.AppendText(message + Environment.NewLine); //nếu có thể truy cập trực tiếp thì message được thêm vào cuối 
+            }
+        }
+
+        private void button_listen_Click(object sender, EventArgs e)
+        {
+            button_listen.Enabled = false;
+            //Kiểm tra đối tượng listener được khởi tạo chưa
+            if (listener == null)
+            {
+                listener = new TcpListener(IPAddress.Loopback, 8080);
+                listener.Start();
+                MessageBox.Show("Listening for connections", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AcceptClients();
             }
         }
     }

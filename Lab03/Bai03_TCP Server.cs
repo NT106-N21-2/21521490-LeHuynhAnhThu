@@ -87,9 +87,6 @@ namespace Lab03_Bai03
 
         }
 
-        private void TCP_Server_Load(object sender, EventArgs e)
-        {
-
-        }
+   
     }
 }

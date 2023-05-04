@@ -69,7 +69,7 @@
             Controls.Add(button1);
             Name = "TCP_Server";
             Text = "TCP_Server";
-            Load += TCP_Server_Load;
+           
             ResumeLayout(false);
         }
 

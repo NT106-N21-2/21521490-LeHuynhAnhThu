@@ -60,7 +60,7 @@
             // richTextBox_chat
             // 
             richTextBox_chat.BorderStyle = BorderStyle.None;
-            richTextBox_chat.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            richTextBox_chat.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             richTextBox_chat.Location = new Point(326, 120);
             richTextBox_chat.Name = "richTextBox_chat";
             richTextBox_chat.Size = new Size(422, 126);
@@ -81,7 +81,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(800, 481);
+            ClientSize = new Size(796, 481);
             Controls.Add(textBox_name);
             Controls.Add(richTextBox_chat);
             Controls.Add(button_send);
