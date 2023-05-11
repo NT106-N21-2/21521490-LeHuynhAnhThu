@@ -123,7 +123,7 @@ namespace Lab04
                 // Tạo PictureBox để hiển thị ảnh đại diện của người dùng
                 PictureBox pictureBox = new PictureBox();
                 pictureBox.Load(item.Avatar);
-                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; 
                 pictureBox.Location = new Point(400, item.Id * 100);
                 pictureBox.Size = new Size(80, 80);
                 panel1.Controls.Add(pictureBox);
