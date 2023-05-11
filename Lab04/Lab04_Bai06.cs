@@ -65,7 +65,7 @@ namespace Lab04
                         itemPanel.Padding = new Padding(5);
                         itemPanel.Cursor = Cursors.Hand;
                         itemPanel.Click += panel_web_Click;
-                        itemPanel.Size = new Size(764, 200);
+                        itemPanel.Size = new Size(764, 120);
 
                         Label titleLabel = new Label();
                         titleLabel.AutoSize = true;
@@ -92,9 +92,13 @@ namespace Lab04
                         itemPanel.Controls.Add(imagePictureBox);
                         itemPanel.Tag = link;
 
+                        titleLabel.Location = new Point(imagePictureBox.Right + 10, 10);
+                        descriptionLabel.Location = new Point(imagePictureBox.Right + 10, titleLabel.Bottom + 10);
+                        imagePictureBox.Location = new Point(10, 10);
+
                         panel_web.Controls.Add(itemPanel);
 
-                        count++;
+                        //count++;
                     }
                 }
                 catch (Exception ex)
@@ -102,6 +106,8 @@ namespace Lab04
                     Console.WriteLine("Error: " + ex.Message);
                 }
                 progressBar.Value = count;
+
+                count++;
             }
         }
 
