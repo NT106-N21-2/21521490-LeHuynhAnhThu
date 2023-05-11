@@ -48,6 +48,7 @@
             button6.TabIndex = 17;
             button6.Text = "BÀI 06";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
