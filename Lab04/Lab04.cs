@@ -18,11 +18,5 @@ namespace Lab04
             Lab04_Bai04 f4 = new Lab04_Bai04();
             f4.ShowDialog();
         }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Lab04_Bai06 f6 = new Lab04_Bai06();
-            f6.ShowDialog();
-        }
     }
 }
