@@ -34,7 +34,7 @@ namespace Lab04
             try
             {
                 // Khởi tạo request với địa chỉ URL sử dụng phương thức POST
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                WebRequest request = WebRequest.Create(url);
                 request.Method = "POST";
 
                 // Convert dữ liệu POST từ string sang byte array
@@ -57,7 +57,7 @@ namespace Lab04
                 string responseString = await Task.Run(() =>
                 {
                     // Get response từ WebRequest bằng cách sử dụng phương thức GetResponse()
-                    using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                    using (WebResponse response = request.GetResponse())
                     {
                         // Lấy phản hồi dưới dạng stream
                         using (Stream responseStream = response.GetResponseStream())

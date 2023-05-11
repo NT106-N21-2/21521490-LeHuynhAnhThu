@@ -74,6 +74,7 @@
             button4.TabIndex = 15;
             button4.Text = "BÀI 04";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
