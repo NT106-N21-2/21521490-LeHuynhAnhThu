@@ -61,6 +61,7 @@
             button5.TabIndex = 16;
             button5.Text = "BÀI 05";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -88,6 +89,7 @@
             button3.TabIndex = 14;
             button3.Text = "BÀI 03";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -115,6 +117,7 @@
             button1.TabIndex = 12;
             button1.Text = "BÀI 01";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // Lab04
             // 
@@ -129,6 +132,7 @@
             Controls.Add(button1);
             Name = "Lab04";
             Text = "Form1";
+            Load += Lab04_Load;
             ResumeLayout(false);
         }
 
