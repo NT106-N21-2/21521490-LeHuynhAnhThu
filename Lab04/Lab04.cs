@@ -7,23 +7,16 @@ namespace Lab04
             InitializeComponent();
         }
 
-        private void Bai01_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            Lab04_Bai01 f1 = new Lab04_Bai01();
-            f1.Show();
+            Lab04_Bai02 f2 = new Lab04_Bai02();
+            f2.ShowDialog();
         }
 
-        private void Bai3_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            Lab04_Bai03 f3 = new Lab04_Bai03();
-
-            f3.Show();
-        }
-
-        private void Bai5_Click(object sender, EventArgs e)
-        {
-            Lab04_Bai05 f5 = new Lab04_Bai05();
-            f5.Show();
+            Lab04_Bai04 f4 = new Lab04_Bai04();
+            f4.ShowDialog();
         }
     }
 }
