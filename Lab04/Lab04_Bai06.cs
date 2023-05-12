@@ -36,11 +36,10 @@ namespace Lab04
             var articles = htmlDoc.DocumentNode.SelectNodes("//*[@id=\"automation_TV0\"]/div[2]/article");
             progressBar.Maximum = articles.Count;
             int count = 0;
-            for (int i = 0; i < articles.Count; i++)
+            foreach (HtmlNode article in articles)
             {
                 try
                 {
-                    HtmlNode article = articles[i];
                     HtmlNode imageNode = article.SelectSingleNode("./div/a/picture/img");
                     HtmlNode titleNode = article.SelectSingleNode("./h2");
                     HtmlNode descriptionNode = article.SelectSingleNode("./p");
@@ -64,18 +63,18 @@ namespace Lab04
                         itemPanel.Margin = new Padding(5);
                         itemPanel.Padding = new Padding(5);
                         itemPanel.Cursor = Cursors.Hand;
-                        itemPanel.Click += panel_web_Click;
-                        itemPanel.Size = new Size(764, 120);
+                        itemPanel.Size = new Size(743, 120);
 
                         Label titleLabel = new Label();
                         titleLabel.AutoSize = true;
-                        titleLabel.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+                        titleLabel.MaximumSize = new Size(itemPanel.Width - 200, 0);
+                        titleLabel.Font = new Font("Times New Roman", 10, FontStyle.Bold);
                         titleLabel.Text = title;
 
                         Label descriptionLabel = new Label();
                         descriptionLabel.AutoSize = true;
-                        descriptionLabel.Font = new Font("Microsoft Sans Serif", 10);
-                        descriptionLabel.MaximumSize = new Size(panel_web.Width - 250, 0);
+                        descriptionLabel.Font = new Font("Times New Roman", 10);
+                        descriptionLabel.MaximumSize = new Size(panel_web.Width - 200, 0);
                         descriptionLabel.Text = description;
 
                         PictureBox imagePictureBox = new PictureBox();
@@ -96,9 +95,22 @@ namespace Lab04
                         descriptionLabel.Location = new Point(imagePictureBox.Right + 10, titleLabel.Bottom + 10);
                         imagePictureBox.Location = new Point(10, 10);
 
+                        itemPanel.Click += panel_web_Click; // Gán sự kiện click vào Panel chứa tin tức
+
+                        if (count > 0)
+                        {
+                            Panel prevPanel = (Panel)panel_web.Controls[count - 1];
+                            int top = prevPanel.Bottom + 10;
+                            itemPanel.Location = new Point(0, top);
+                        }
+                        else
+                        {
+                            itemPanel.Location = new Point(0, 0);
+                        }
+
                         panel_web.Controls.Add(itemPanel);
 
-                        //count++;
+                        count++;
                     }
                 }
                 catch (Exception ex)
@@ -106,8 +118,6 @@ namespace Lab04
                     Console.WriteLine("Error: " + ex.Message);
                 }
                 progressBar.Value = count;
-
-                count++;
             }
         }
 

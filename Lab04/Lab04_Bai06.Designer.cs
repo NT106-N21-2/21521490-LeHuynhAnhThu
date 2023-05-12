@@ -60,6 +60,7 @@
             // 
             // panel_web
             // 
+            panel_web.AutoScroll = true;
             panel_web.Location = new Point(24, 81);
             panel_web.Name = "panel_web";
             panel_web.Size = new Size(764, 329);
