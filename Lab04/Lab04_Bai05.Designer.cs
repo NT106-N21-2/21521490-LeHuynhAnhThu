@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            panel_web = new Panel();
             button2 = new Button();
             button3 = new Button();
             label1 = new Label();
@@ -36,15 +36,16 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
+            progressBar = new ProgressBar();
             SuspendLayout();
             // 
-            // panel1
+            // panel_web
             // 
-            panel1.AutoScroll = true;
-            panel1.Location = new Point(12, 102);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(776, 465);
-            panel1.TabIndex = 2;
+            panel_web.AutoScroll = true;
+            panel_web.Location = new Point(12, 102);
+            panel_web.Name = "panel_web";
+            panel_web.Size = new Size(764, 329);
+            panel_web.TabIndex = 2;
             // 
             // button2
             // 
@@ -111,12 +112,20 @@
             label5.TabIndex = 9;
             label5.Text = "label5";
             // 
+            // progressBar
+            // 
+            progressBar.Location = new Point(12, 445);
+            progressBar.Name = "progressBar";
+            progressBar.Size = new Size(104, 22);
+            progressBar.TabIndex = 10;
+            // 
             // Lab04_Bai05
             // 
             AccessibleRole = AccessibleRole.ScrollBar;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 479);
+            Controls.Add(progressBar);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -124,7 +133,7 @@
             Controls.Add(label1);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(panel1);
+            Controls.Add(panel_web);
             Name = "Lab04_Bai05";
             Text = "Lab04_Bai05";
             Load += Lab04_Bai05_Load;
@@ -133,7 +142,7 @@
         }
 
         #endregion
-        private Panel panel1;
+        private Panel panel_web;
         private Button button2;
         private Button button3;
         private Label label1;
@@ -141,5 +150,6 @@
         private Label label3;
         private Label label4;
         private Label label5;
+        private ProgressBar progressBar;
     }
 }

@@ -95,7 +95,8 @@ namespace Lab04
                         descriptionLabel.Location = new Point(imagePictureBox.Right + 10, titleLabel.Bottom + 10);
                         imagePictureBox.Location = new Point(10, 10);
 
-                        itemPanel.Click += panel_web_Click; // Gán sự kiện click vào Panel chứa tin tức
+                        // Gán sự kiện click vào Panel chứa tin tức
+                        itemPanel.Click += panel_web_Click;
 
                         if (count > 0)
                         {
@@ -113,10 +114,7 @@ namespace Lab04
                         count++;
                     }
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error: " + ex.Message);
-                }
+                catch (Exception ex) { }
                 progressBar.Value = count;
             }
         }

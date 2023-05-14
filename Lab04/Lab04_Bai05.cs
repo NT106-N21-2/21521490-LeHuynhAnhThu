@@ -90,8 +90,7 @@ namespace Lab04
             // Sử dụng JsonSerializer để chuyển đổi JSON thành đối tượng UserPagination
             var data = JsonSerializer.Deserialize<UserPagination>(response);
 
-            // Xóa tất cả các điều khiển trên panel trước khi thêm lại
-            panel1.Controls.Clear();
+            
 
             totalUsers = data.Total;
             usersPerPage = data.PerPage;
@@ -104,30 +103,57 @@ namespace Lab04
 
 
             // Xóa tất cả các điều khiển trên panel trước khi thêm lại
-            panel1.Controls.Clear();
+            panel_web.Controls.Clear();
+            progressBar.Maximum = data.Data.Count;
+            int count = 0;
 
             foreach (var item in data.Data)
             {
+                Panel itemPanel = new Panel();
+                itemPanel.BorderStyle = BorderStyle.FixedSingle;
+                itemPanel.Margin = new Padding(5);
+                itemPanel.Padding = new Padding(5);
+                itemPanel.Cursor = Cursors.Hand;
+                itemPanel.Size = new Size(743, 100);
+
                 // Tạo Label để hiển thị tên người dùng
                 Label lbName = new Label();
                 lbName.Text = item.FirstName + " " + item.LastName;
-                lbName.Location = new Point(0, item.Id * 100);
-                panel1.Controls.Add(lbName);
+                lbName.AutoSize = true;
+                lbName.Font = new Font("Times New Roman", 10, FontStyle.Bold);
+                lbName.Location = new Point(0, 20);
+                itemPanel.Controls.Add(lbName);
 
                 // Tạo Label để hiển thị email người dùng
                 Label lbEmail = new Label();
                 lbEmail.Text = "Email: " + item.Email;
-                lbEmail.AutoSize = true; ;
-                lbEmail.Location = new Point(0, item.Id * 100 + 40);
-                panel1.Controls.Add(lbEmail);
+                lbEmail.AutoSize = true;
+                lbEmail.Font = new Font("Times New Roman", 10);
+                lbEmail.Location = new Point(0, lbName.Bottom + 10);
+                itemPanel.Controls.Add(lbEmail);
 
                 // Tạo PictureBox để hiển thị ảnh đại diện của người dùng
                 PictureBox pictureBox = new PictureBox();
                 pictureBox.Load(item.Avatar);
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBox.Location = new Point(400, item.Id * 100);
-                pictureBox.Size = new Size(80, 80);
-                panel1.Controls.Add(pictureBox);
+                pictureBox.Location = new Point(itemPanel.Width - 110, 0);
+                pictureBox.Size = new Size(100, 100);
+                itemPanel.Controls.Add(pictureBox);
+
+                if (count > 0)
+                {
+                    Panel prevPanel = (Panel)panel_web.Controls[count - 1];
+                    int top = prevPanel.Bottom + 10;
+                    itemPanel.Location = new Point(0, top);
+                }
+                else
+                {
+                    itemPanel.Location = new Point(0, 0);
+                }
+
+                panel_web.Controls.Add(itemPanel);
+
+                count++;
             }
         }
         private void back_Click(object sender, EventArgs e)
