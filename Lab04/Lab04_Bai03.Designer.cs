@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lab04_Bai03));
             contextMenuStrip1 = new ContextMenuStrip(components);
             textBox1 = new TextBox();
             textBox2 = new TextBox();
@@ -44,41 +45,44 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(88, 43);
+            textBox1.Location = new Point(123, 69);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(315, 27);
+            textBox1.Size = new Size(377, 27);
             textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(88, 128);
+            textBox2.Location = new Point(123, 119);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(314, 27);
+            textBox2.Size = new Size(377, 27);
             textBox2.TabIndex = 2;
             // 
             // richTextBox1
             // 
             richTextBox1.Location = new Point(78, 185);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(611, 234);
+            richTextBox1.Size = new Size(659, 234);
             richTextBox1.TabIndex = 3;
             richTextBox1.Text = "";
             // 
             // button1
             // 
-            button1.Location = new Point(524, 55);
+            button1.BackColor = Color.Transparent;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(599, 61);
             button1.Name = "button1";
             button1.Size = new Size(124, 77);
             button1.TabIndex = 4;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // Lab04_Bai03
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(816, 450);
             Controls.Add(button1);
             Controls.Add(richTextBox1);
             Controls.Add(textBox2);

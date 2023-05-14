@@ -90,16 +90,16 @@ namespace Lab04
             // Sử dụng JsonSerializer để chuyển đổi JSON thành đối tượng UserPagination
             var data = JsonSerializer.Deserialize<UserPagination>(response);
 
-            
+
 
             totalUsers = data.Total;
             usersPerPage = data.PerPage;
             totalPages = data.TotalPages;
 
-            label2.Text = $"Page {currentPage}/{totalPages}";
-            label3.Text = $"Total page: {totalPages}";
-            label4.Text = $"Users/Page: {usersPerPage}";
-            label5.Text = $"Total Users: {totalUsers}";
+            label2.Text = $"{currentPage}";
+            label3.Text = $"{totalPages}";
+            label4.Text = $"{usersPerPage}";
+            label5.Text = $"{totalUsers}";
 
 
             // Xóa tất cả các điều khiển trên panel trước khi thêm lại
@@ -173,6 +173,11 @@ namespace Lab04
                 return;
             currentPage++;
             LoadData();
+        }
+
+        private void progressBar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
