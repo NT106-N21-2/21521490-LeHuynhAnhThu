@@ -85,7 +85,6 @@
             Controls.Add(textBox1);
             Name = "Lab04_Bai03";
             Text = "Lab03_Bai03";
-            Load += Lab04_Bai03_Load;
             ResumeLayout(false);
             PerformLayout();
         }

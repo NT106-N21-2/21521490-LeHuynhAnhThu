@@ -154,6 +154,8 @@ namespace Lab04
                 panel_web.Controls.Add(itemPanel);
 
                 count++;
+
+                progressBar.Value = count;
             }
         }
         private void back_Click(object sender, EventArgs e)
