@@ -58,6 +58,6 @@ namespace Lab04
         }
     }
 }
- 
+
 
 

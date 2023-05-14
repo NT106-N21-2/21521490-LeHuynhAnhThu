@@ -80,5 +80,10 @@ namespace Lab04
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
+
+        private void textBox_url_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

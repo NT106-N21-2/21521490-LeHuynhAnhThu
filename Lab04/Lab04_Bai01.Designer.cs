@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lab04_Bai01));
             button1 = new Button();
             textBox1 = new TextBox();
             richTextBox1 = new RichTextBox();
@@ -35,27 +36,34 @@
             // 
             // button1
             // 
-            button1.Location = new Point(653, 76);
+            button1.BackColor = Color.Transparent;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Sitka Small Semibold", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            button1.Location = new Point(557, 81);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(175, 29);
             button1.TabIndex = 0;
-            button1.Text = "GET";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += get_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(77, 76);
+            textBox1.BackColor = Color.LightPink;
+            textBox1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox1.Location = new Point(57, 77);
+            textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(465, 27);
+            textBox1.Size = new Size(464, 38);
             textBox1.TabIndex = 2;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(39, 166);
+            richTextBox1.BackColor = Color.Pink;
+            richTextBox1.Location = new Point(57, 148);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(730, 246);
+            richTextBox1.Size = new Size(675, 228);
             richTextBox1.TabIndex = 4;
             richTextBox1.Text = "";
             // 
@@ -63,6 +71,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LavenderBlush;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
             Controls.Add(richTextBox1);
             Controls.Add(textBox1);

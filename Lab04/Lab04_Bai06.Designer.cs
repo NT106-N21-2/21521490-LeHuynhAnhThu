@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lab04_Bai06));
             textBox_url = new TextBox();
             button_get = new Button();
             progressBar = new ProgressBar();
@@ -36,19 +37,23 @@
             // 
             // textBox_url
             // 
-            textBox_url.Location = new Point(21, 21);
+            textBox_url.BackColor = Color.Pink;
+            textBox_url.Location = new Point(33, 55);
+            textBox_url.Multiline = true;
             textBox_url.Name = "textBox_url";
-            textBox_url.Size = new Size(643, 27);
+            textBox_url.Size = new Size(507, 32);
             textBox_url.TabIndex = 7;
             // 
             // button_get
             // 
-            button_get.Location = new Point(703, 21);
+            button_get.BackColor = Color.Transparent;
+            button_get.FlatAppearance.BorderSize = 0;
+            button_get.FlatStyle = FlatStyle.Flat;
+            button_get.Location = new Point(560, 55);
             button_get.Name = "button_get";
-            button_get.Size = new Size(85, 27);
+            button_get.Size = new Size(169, 27);
             button_get.TabIndex = 6;
-            button_get.Text = "GET";
-            button_get.UseVisualStyleBackColor = true;
+            button_get.UseVisualStyleBackColor = false;
             button_get.Click += button_get_Click;
             // 
             // progressBar
@@ -61,9 +66,10 @@
             // panel_web
             // 
             panel_web.AutoScroll = true;
-            panel_web.Location = new Point(24, 81);
+            panel_web.BackColor = Color.Transparent;
+            panel_web.Location = new Point(24, 100);
             panel_web.Name = "panel_web";
-            panel_web.Size = new Size(764, 329);
+            panel_web.Size = new Size(764, 310);
             panel_web.TabIndex = 9;
             panel_web.Click += panel_web_Click;
             // 
@@ -71,6 +77,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
             Controls.Add(panel_web);
             Controls.Add(progressBar);

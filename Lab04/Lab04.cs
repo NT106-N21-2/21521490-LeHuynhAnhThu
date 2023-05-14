@@ -52,5 +52,10 @@ namespace Lab04
             Lab04_Bai06 f7 = new Lab04_Bai06();
             f7.ShowDialog();
         }
+
+        private void Lab04_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

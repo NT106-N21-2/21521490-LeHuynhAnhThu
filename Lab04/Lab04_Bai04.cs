@@ -148,6 +148,11 @@ namespace Lab04
 
                 MessageBox.Show("Download completed!");
             }
-        } 
+        }
+
+        private void Lab04_Bai04_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

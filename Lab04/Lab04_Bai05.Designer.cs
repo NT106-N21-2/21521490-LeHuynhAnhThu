@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lab04_Bai05));
             panel_web = new Panel();
             button2 = new Button();
             button3 = new Button();
-            label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -42,75 +42,78 @@
             // panel_web
             // 
             panel_web.AutoScroll = true;
-            panel_web.Location = new Point(12, 102);
+            panel_web.BackColor = Color.Pink;
+            panel_web.Location = new Point(12, 151);
             panel_web.Name = "panel_web";
-            panel_web.Size = new Size(764, 329);
+            panel_web.Size = new Size(776, 280);
             panel_web.TabIndex = 2;
             // 
             // button2
             // 
-            button2.Location = new Point(455, 42);
+            button2.BackColor = Color.Transparent;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.Transparent;
+            button2.Location = new Point(490, 74);
             button2.Name = "button2";
-            button2.Size = new Size(94, 29);
+            button2.Size = new Size(82, 29);
             button2.TabIndex = 3;
-            button2.Text = "Back";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += back_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(694, 40);
+            button3.BackColor = Color.Transparent;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(723, 74);
             button3.Name = "button3";
-            button3.Size = new Size(94, 29);
+            button3.Size = new Size(65, 29);
             button3.TabIndex = 4;
-            button3.Text = "Next";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += next_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(577, 46);
-            label1.Name = "label1";
-            label1.Size = new Size(75, 20);
-            label1.TabIndex = 5;
-            label1.Text = "USER LIST";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(42, 29);
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(148, 63);
             label2.Name = "label2";
-            label2.Size = new Size(50, 20);
+            label2.Size = new Size(0, 23);
             label2.TabIndex = 6;
-            label2.Text = "label2";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(195, 29);
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(368, 63);
             label3.Name = "label3";
-            label3.Size = new Size(50, 20);
+            label3.Size = new Size(0, 23);
             label3.TabIndex = 7;
-            label3.Text = "label3";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(42, 68);
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label4.Location = new Point(206, 107);
             label4.Name = "label4";
-            label4.Size = new Size(50, 20);
+            label4.Size = new Size(0, 23);
             label4.TabIndex = 8;
-            label4.Text = "label4";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(195, 68);
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(368, 107);
             label5.Name = "label5";
-            label5.Size = new Size(50, 20);
+            label5.Size = new Size(0, 23);
             label5.TabIndex = 9;
-            label5.Text = "label5";
             // 
             // progressBar
             // 
@@ -118,19 +121,21 @@
             progressBar.Name = "progressBar";
             progressBar.Size = new Size(104, 22);
             progressBar.TabIndex = 10;
+            progressBar.Click += progressBar_Click;
             // 
             // Lab04_Bai05
             // 
             AccessibleRole = AccessibleRole.ScrollBar;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LavenderBlush;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 479);
             Controls.Add(progressBar);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(panel_web);
@@ -145,7 +150,6 @@
         private Panel panel_web;
         private Button button2;
         private Button button3;
-        private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
