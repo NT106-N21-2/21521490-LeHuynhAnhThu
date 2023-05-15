@@ -42,15 +42,5 @@ namespace Lab04
             string html = getHTML(url);
             richTextBox1.Text = html;
         }
-
-        private void Lab04_Bai1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

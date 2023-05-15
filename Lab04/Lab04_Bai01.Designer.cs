@@ -56,7 +56,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(464, 38);
             textBox1.TabIndex = 2;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // richTextBox1
             // 
@@ -79,7 +78,6 @@
             Controls.Add(button1);
             Name = "Lab04_Bai01";
             Text = "Lab04_Bai1";
-            Load += Lab04_Bai1_Load;
             ResumeLayout(false);
             PerformLayout();
         }

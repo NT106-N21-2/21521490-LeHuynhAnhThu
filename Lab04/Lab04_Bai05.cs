@@ -174,10 +174,5 @@ namespace Lab04
             currentPage++;
             LoadData();
         }
-
-        private void progressBar_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -98,11 +98,11 @@ namespace Lab04
                         {
                             if (ex.Response is HttpWebResponse response && response.StatusCode == HttpStatusCode.NotFound)
                             {
-                                // Xử lý lỗi 404 tại đây
+                                MessageBox.Show("ERROR: 404 Not Found");
                             }
                             else
                             {
-                                // Xử lý các lỗi khác tại đây
+                                MessageBox.Show("ERROR! Please try again!");
                             }
                         }
                     }
@@ -136,11 +136,11 @@ namespace Lab04
                         {
                             if (ex.Response is HttpWebResponse response && response.StatusCode == HttpStatusCode.NotFound)
                             {
-                                // Xử lý lỗi 404 tại đây
+                                MessageBox.Show("ERROR: 404 Not Found");
                             }
                             else
                             {
-                                // Xử lý các lỗi khác tại đây
+                                MessageBox.Show("ERROR! Please try again!");
                             }
                         }
                     }
@@ -148,11 +148,6 @@ namespace Lab04
 
                 MessageBox.Show("Download completed!");
             }
-        }
-
-        private void Lab04_Bai04_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

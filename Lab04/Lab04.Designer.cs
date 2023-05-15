@@ -135,7 +135,6 @@
             Controls.Add(button1);
             Name = "Lab04";
             Text = "Lab04";
-            Load += Lab04_Load;
             ResumeLayout(false);
         }
 

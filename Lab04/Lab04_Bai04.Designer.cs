@@ -108,7 +108,6 @@
             Controls.Add(button_get);
             Name = "Lab04_Bai04";
             Text = "Lab04_Bai04";
-            Load += Lab04_Bai04_Load;
             ((System.ComponentModel.ISupportInitialize)webView21).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -121,7 +121,6 @@
             progressBar.Name = "progressBar";
             progressBar.Size = new Size(104, 22);
             progressBar.TabIndex = 10;
-            progressBar.Click += progressBar_Click;
             // 
             // Lab04_Bai05
             // 

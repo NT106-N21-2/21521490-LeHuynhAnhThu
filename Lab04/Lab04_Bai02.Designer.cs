@@ -56,7 +56,6 @@
             textBox_url.Name = "textBox_url";
             textBox_url.Size = new Size(483, 35);
             textBox_url.TabIndex = 1;
-            textBox_url.TextChanged += textBox_url_TextChanged;
             // 
             // textBox_data
             // 
