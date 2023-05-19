@@ -42,7 +42,6 @@
             textBox_message.Name = "textBox_message";
             textBox_message.Size = new Size(260, 27);
             textBox_message.TabIndex = 0;
-            textBox_message.TextChanged += textBox_message_TextChanged;
             // 
             // button_send
             // 
@@ -74,7 +73,6 @@
             textBox_name.Name = "textBox_name";
             textBox_name.Size = new Size(150, 27);
             textBox_name.TabIndex = 0;
-            textBox_name.TextChanged += textBox_name_TextChanged;
             // 
             // Bai05_ClientForm
             // 

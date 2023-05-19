@@ -28,7 +28,7 @@ namespace Lab05
             client.Authenticate("21521490@gm.uit.edu.vn", "qacpigizbyjxiwpr");
 
             var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("anhthune", textBox_from.Text));
+            message.From.Add(new MailboxAddress("anhthune", "21521490@gm.uit.edu.vn"));
             message.To.Add(new MailboxAddress("", textBox_to.Text));
             message.Subject = textBox_subject.Text;
             message.Body = new TextPart("plain")
