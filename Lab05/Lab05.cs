@@ -15,8 +15,8 @@ namespace Lab05
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //Lab05_Bai02 f2 = new Lab05_Bai02();
-            //f2.ShowDialog();
+            Lab05_Bai02 f2 = new Lab05_Bai02();
+            f2.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
