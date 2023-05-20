@@ -1,5 +1,6 @@
 ﻿using MailKit.Net.Imap;
 using MailKit;
+using MimeKit;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,42 +10,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using MimeKit;
+using MailKit.Net.Pop3;
 
 namespace Lab05
 {
-    public partial class Lab05_Bai02 : Form
+    public partial class Lab05_Bai03 : Form
     {
         List<MimeMessage> emails = new List<MimeMessage>();
-        public Lab05_Bai02()
+        public Lab05_Bai03()
         {
             InitializeComponent();
             listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
-
         }
 
         private void button_Login_Click(object sender, EventArgs e)
         {
-            var client = new ImapClient();
-            client.Connect("imap.gmail.com", 993, true);
+            var client = new Pop3Client();
+            client.Connect("pop.gmail.com", 995, true);
             client.Authenticate(textBox_Email.Text, textBox_Password.Text);
 
 
-            var inbox = client.Inbox;
-            inbox.Open(FolderAccess.ReadOnly);
+            var messages = client.GetMessageCount();
 
             listView1.Items.Clear();
             listView1.Columns.Clear();
+
 
             // Thêm các cột vào ListView
             listView1.Columns.Add("From", 150);
             listView1.Columns.Add("Email", 200);
             listView1.Columns.Add("Date", 120);
 
-            for (int i = 0; i < inbox.Count; i++)
+            for (int i = 0; i < messages; i++)
             {
-                var message = inbox.GetMessage(i);
+                var message = client.GetMessage(i);
                 emails.Add(message);
                 // Tạo một ListViewItem mới
                 var item = new ListViewItem(message.From.Mailboxes.FirstOrDefault()?.Name);
@@ -59,12 +58,13 @@ namespace Lab05
 
                 // Thêm ListViewItem vào ListView
                 listView1.Items.Add(item);
+                
             }
-            label_Total.Text = $"Tổng số email: {inbox.Count}";
+            //label_Total.Text = $"Tổng số email: {messages}";
+
             client.Disconnect(true);
         }
 
-        //Chọn nội dung mail muốn đọc 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listView1.SelectedItems.Count > 0)
@@ -78,5 +78,3 @@ namespace Lab05
         }
     }
 }
-
-

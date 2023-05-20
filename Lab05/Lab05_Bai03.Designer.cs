@@ -1,6 +1,6 @@
 ﻿namespace Lab05
 {
-    partial class Lab05_Bai02
+    partial class Lab05_Bai03
     {
         /// <summary>
         /// Required designer variable.
@@ -28,76 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button_Login = new Button();
-            textBox_Email = new TextBox();
-            textBox_Password = new TextBox();
             listView1 = new ListView();
+            textBox_Password = new TextBox();
+            textBox_Email = new TextBox();
+            button_Login = new Button();
             label_Total = new Label();
             SuspendLayout();
             // 
+            // listView1
+            // 
+            listView1.Location = new Point(6, 122);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(789, 301);
+            listView1.TabIndex = 7;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // textBox_Password
+            // 
+            textBox_Password.Location = new Point(64, 72);
+            textBox_Password.Name = "textBox_Password";
+            textBox_Password.Size = new Size(326, 27);
+            textBox_Password.TabIndex = 6;
+            // 
+            // textBox_Email
+            // 
+            textBox_Email.Location = new Point(64, 28);
+            textBox_Email.Name = "textBox_Email";
+            textBox_Email.Size = new Size(326, 27);
+            textBox_Email.TabIndex = 5;
+            // 
             // button_Login
             // 
-            button_Login.Location = new Point(576, 54);
+            button_Login.Location = new Point(559, 60);
             button_Login.Name = "button_Login";
             button_Login.Size = new Size(94, 29);
-            button_Login.TabIndex = 0;
+            button_Login.TabIndex = 4;
             button_Login.Text = "Login";
             button_Login.UseVisualStyleBackColor = true;
             button_Login.Click += button_Login_Click;
             // 
-            // textBox_Email
-            // 
-            textBox_Email.Location = new Point(81, 22);
-            textBox_Email.Name = "textBox_Email";
-            textBox_Email.Size = new Size(326, 27);
-            textBox_Email.TabIndex = 1;
-            // 
-            // textBox_Password
-            // 
-            textBox_Password.Location = new Point(81, 66);
-            textBox_Password.Name = "textBox_Password";
-            textBox_Password.Size = new Size(326, 27);
-            textBox_Password.TabIndex = 2;
-            // 
-            // listView1
-            // 
-            listView1.Location = new Point(23, 116);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(789, 301);
-            listView1.TabIndex = 3;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            // 
             // label_Total
             // 
             label_Total.AutoSize = true;
-            label_Total.Location = new Point(437, 72);
+            label_Total.Location = new Point(436, 75);
             label_Total.Name = "label_Total";
             label_Total.Size = new Size(0, 20);
-            label_Total.TabIndex = 4;
+            label_Total.TabIndex = 8;
             // 
-            // Lab05_Bai02
+            // Lab05_Bai03
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(824, 450);
+            ClientSize = new Size(800, 450);
             Controls.Add(label_Total);
             Controls.Add(listView1);
             Controls.Add(textBox_Password);
             Controls.Add(textBox_Email);
             Controls.Add(button_Login);
-            Name = "Lab05_Bai02";
-            Text = "Lab05_Bai02";
+            Name = "Lab05_Bai03";
+            Text = "Lab05_Bai03";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button_Login;
-        private TextBox textBox_Email;
-        private TextBox textBox_Password;
         private ListView listView1;
+        private TextBox textBox_Password;
+        private TextBox textBox_Email;
+        private Button button_Login;
         private Label label_Total;
     }
 }
