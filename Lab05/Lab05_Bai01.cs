@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 using System.Xml.Linq;
 
 namespace Lab05
@@ -28,7 +27,7 @@ namespace Lab05
             client.Authenticate("21521490@gm.uit.edu.vn", "qacpigizbyjxiwpr");
 
             var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("anhthune", textBox_from.Text));
+            message.From.Add(new MailboxAddress("Lê Huỳnh Anh Thư", textBox_from.Text));
             message.To.Add(new MailboxAddress("", textBox_to.Text));
             message.Subject = textBox_subject.Text;
             message.Body = new TextPart("plain")

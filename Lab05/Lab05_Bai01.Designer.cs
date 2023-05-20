@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             button_send = new Button();
-            textBox_from = new TextBox();
             textBox_subject = new TextBox();
             textBox_to = new TextBox();
             richTextBox_body = new RichTextBox();
+            textBox_from = new TextBox();
             SuspendLayout();
             // 
             // button_send
@@ -44,13 +44,6 @@
             button_send.Text = "SEND";
             button_send.UseVisualStyleBackColor = true;
             button_send.Click += button_send_Click;
-            // 
-            // textBox_from
-            // 
-            textBox_from.Location = new Point(188, 24);
-            textBox_from.Name = "textBox_from";
-            textBox_from.Size = new Size(575, 27);
-            textBox_from.TabIndex = 1;
             // 
             // textBox_subject
             // 
@@ -74,15 +67,24 @@
             richTextBox_body.TabIndex = 4;
             richTextBox_body.Text = "";
             // 
+            // textBox_from
+            // 
+            textBox_from.Location = new Point(188, 24);
+            textBox_from.Name = "textBox_from";
+            textBox_from.ReadOnly = true;
+            textBox_from.Size = new Size(575, 27);
+            textBox_from.TabIndex = 5;
+            textBox_from.Text = "21521490@gm.uit.edu.vn";
+            // 
             // Lab05_Bai01
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBox_from);
             Controls.Add(richTextBox_body);
             Controls.Add(textBox_to);
             Controls.Add(textBox_subject);
-            Controls.Add(textBox_from);
             Controls.Add(button_send);
             Name = "Lab05_Bai01";
             Text = "Lab05_Bai01";
@@ -93,9 +95,9 @@
         #endregion
 
         private Button button_send;
-        private TextBox textBox_from;
         private TextBox textBox_subject;
         private TextBox textBox_to;
         private RichTextBox richTextBox_body;
+        private TextBox textBox_from;
     }
 }
