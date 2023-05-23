@@ -13,7 +13,7 @@ using System.Xml.Linq;
 
 namespace Lab05
 {
-    public partial class Lab05_Bai01 : Form 
+    public partial class Lab05_Bai01 : Form
     {
         public Lab05_Bai01()
         {
