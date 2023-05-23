@@ -33,6 +33,7 @@
             textBox_Password = new TextBox();
             listView1 = new ListView();
             label_Total = new Label();
+            checkBox_Showpass = new CheckBox();
             SuspendLayout();
             // 
             // button_Login
@@ -76,11 +77,23 @@
             label_Total.Size = new Size(0, 20);
             label_Total.TabIndex = 4;
             // 
+            // checkBox_Showpass
+            // 
+            checkBox_Showpass.AutoSize = true;
+            checkBox_Showpass.Cursor = Cursors.No;
+            checkBox_Showpass.Location = new Point(376, 69);
+            checkBox_Showpass.Name = "checkBox_Showpass";
+            checkBox_Showpass.Size = new Size(18, 17);
+            checkBox_Showpass.TabIndex = 5;
+            checkBox_Showpass.UseVisualStyleBackColor = true;
+            checkBox_Showpass.CheckedChanged += checkBox_Showpass_CheckedChanged_1;
+            // 
             // Lab05_Bai02
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(824, 450);
+            Controls.Add(checkBox_Showpass);
             Controls.Add(label_Total);
             Controls.Add(listView1);
             Controls.Add(textBox_Password);
@@ -99,5 +112,6 @@
         private TextBox textBox_Password;
         private ListView listView1;
         private Label label_Total;
+        private CheckBox checkBox_Showpass;
     }
 }

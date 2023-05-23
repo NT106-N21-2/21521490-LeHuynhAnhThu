@@ -60,7 +60,7 @@ namespace Lab05
                 // Thêm ListViewItem vào ListView
                 listView1.Items.Add(item);
             }
-            label_Total.Text = $"Tổng số email: {inbox.Count}";
+
             client.Disconnect(true);
         }
 
@@ -74,6 +74,22 @@ namespace Lab05
 
                 // Hiển thị toàn bộ nội dung của email
                 MessageBox.Show($"From: {selectedEmail.From}\nSubject: {selectedEmail.Subject}\n\n{selectedEmail.TextBody}");
+            }
+        }
+
+      
+
+        private void checkBox_Showpass_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (checkBox_Showpass.Checked)
+            {
+                textBox_Password.UseSystemPasswordChar = false;
+
+            }
+            else
+            {
+                textBox_Password.UseSystemPasswordChar = true;
+
             }
         }
     }
