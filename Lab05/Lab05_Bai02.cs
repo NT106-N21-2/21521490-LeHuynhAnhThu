@@ -77,7 +77,7 @@ namespace Lab05
             }
         }
 
-      
+
 
         private void checkBox_Showpass_CheckedChanged_1(object sender, EventArgs e)
         {
@@ -91,6 +91,11 @@ namespace Lab05
                 textBox_Password.UseSystemPasswordChar = true;
 
             }
+        }
+
+        private void textBox_Email_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
