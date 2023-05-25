@@ -42,7 +42,7 @@
             button_Login.BackColor = Color.Transparent;
             button_Login.FlatAppearance.BorderSize = 0;
             button_Login.FlatStyle = FlatStyle.Flat;
-            button_Login.Location = new Point(677, 72);
+            button_Login.Location = new Point(681, 112);
             button_Login.Name = "button_Login";
             button_Login.Size = new Size(94, 29);
             button_Login.TabIndex = 0;
@@ -53,7 +53,7 @@
             // 
             textBox_Email.BackColor = Color.FromArgb(239, 207, 49);
             textBox_Email.BorderStyle = BorderStyle.None;
-            textBox_Email.Location = new Point(230, 42);
+            textBox_Email.Location = new Point(186, 56);
             textBox_Email.Name = "textBox_Email";
             textBox_Email.Size = new Size(376, 20);
             textBox_Email.TabIndex = 1;
@@ -63,16 +63,16 @@
             // 
             textBox_Password.BackColor = Color.FromArgb(239, 207, 49);
             textBox_Password.BorderStyle = BorderStyle.None;
-            textBox_Password.Location = new Point(230, 107);
+            textBox_Password.Location = new Point(186, 129);
             textBox_Password.Name = "textBox_Password";
-            textBox_Password.Size = new Size(352, 20);
+            textBox_Password.Size = new Size(387, 20);
             textBox_Password.TabIndex = 2;
             // 
             // listView1
             // 
-            listView1.Location = new Point(28, 161);
+            listView1.Location = new Point(28, 175);
             listView1.Name = "listView1";
-            listView1.Size = new Size(770, 265);
+            listView1.Size = new Size(770, 272);
             listView1.TabIndex = 3;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -91,7 +91,7 @@
             checkBox_Showpass.AutoSize = true;
             checkBox_Showpass.BackColor = Color.FromArgb(239, 207, 49);
             checkBox_Showpass.Cursor = Cursors.No;
-            checkBox_Showpass.Location = new Point(588, 112);
+            checkBox_Showpass.Location = new Point(579, 130);
             checkBox_Showpass.Name = "checkBox_Showpass";
             checkBox_Showpass.Size = new Size(18, 17);
             checkBox_Showpass.TabIndex = 5;

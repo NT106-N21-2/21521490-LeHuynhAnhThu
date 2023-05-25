@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using MimeKit;
+using System.Runtime.CompilerServices;
 
 namespace Lab05
 {
@@ -38,11 +39,14 @@ namespace Lab05
             listView1.Columns.Clear();
 
             // Thêm các cột vào ListView
-            listView1.Columns.Add("From", 150);
-            listView1.Columns.Add("Email", 200);
-            listView1.Columns.Add("Date", 120);
+            listView1.Columns.Add("From", 300);
+            listView1.Columns.Add("Email", 300);
+            listView1.Columns.Add("Date", 200);
 
-            for (int i = 0; i < inbox.Count; i++)
+            // Lấy số lượng email gần nhất là 20
+            int count = Math.Min(inbox.Count, 20);
+
+            for (int i = inbox.Count - count; i < inbox.Count; i++)
             {
                 var message = inbox.GetMessage(i);
                 emails.Add(message);

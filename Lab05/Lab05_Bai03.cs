@@ -27,7 +27,7 @@ namespace Lab05
         {
             var client = new Pop3Client();
             client.Connect("pop.gmail.com", 995, true);
-            client.Authenticate(textBox_Email.Text, textBox_Password.Text);
+            client.Authenticate(textBox_Email.Text, textBox_Password.Text);   //bcctyctoaolwyoqs
 
 
             var messages = client.GetMessageCount();
@@ -37,9 +37,9 @@ namespace Lab05
 
 
             // Thêm các cột vào ListView
-            listView1.Columns.Add("From", 150);
-            listView1.Columns.Add("Email", 200);
-            listView1.Columns.Add("Date", 120);
+            listView1.Columns.Add("From", 300);
+            listView1.Columns.Add("Email", 300);
+            listView1.Columns.Add("Date", 200);
 
             for (int i = 0; i < messages; i++)
             {
@@ -87,6 +87,16 @@ namespace Lab05
             {
                 textBox_Password.UseSystemPasswordChar = true;
             }
+        }
+
+        private void textBox_Password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lab05_Bai03_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
