@@ -46,10 +46,17 @@ namespace Lab05
             // Lấy số lượng email gần nhất là 20
             int count = Math.Min(inbox.Count, 20);
 
+
+            // Lấy các email gần nhất và lưu vào danh sách emails
+            emails = new List<MimeMessage>();
             for (int i = inbox.Count - count; i < inbox.Count; i++)
             {
                 var message = inbox.GetMessage(i);
-                emails.Add(message);
+                emails.Insert(0, message); // Chèn email vào đầu danh sách
+            }
+
+            foreach (var message in emails)
+            {
                 // Tạo một ListViewItem mới
                 var item = new ListViewItem(message.From.Mailboxes.FirstOrDefault()?.Name);
 
