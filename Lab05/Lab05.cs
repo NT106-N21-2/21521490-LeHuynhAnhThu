@@ -27,8 +27,8 @@ namespace Lab05
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //Lab05_Bai04 f4 = new Lab05_Bai04();
-            //f4.ShowDialog();
+            Lab05_Bai04 f4 = new Lab05_Bai04();
+            f4.ShowDialog();
         }
     }
 }

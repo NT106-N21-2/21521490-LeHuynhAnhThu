@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <PackageReference Include="MailKit" Version="4.0.0" />
+    <PackageReference Include="microsoft.web.webview2" Version="1.0.1774.30" />
+    <PackageReference Include="MimeKit" Version="4.0.0" />
   </ItemGroup>
 
 </Project>
