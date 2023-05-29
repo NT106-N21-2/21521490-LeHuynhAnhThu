@@ -21,14 +21,19 @@ namespace Lab05
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //Lab05_Bai03 f3 = new Lab05_Bai03();
-            //f3.ShowDialog();
+            Lab05_Bai03 f3 = new Lab05_Bai03();
+            f3.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Lab05_Bai04 f4 = new Lab05_Bai04();
             f4.ShowDialog();
+        }
+
+        private void Lab05_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

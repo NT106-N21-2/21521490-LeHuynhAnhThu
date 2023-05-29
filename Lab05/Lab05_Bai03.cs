@@ -1,5 +1,6 @@
 ﻿using MailKit.Net.Imap;
 using MailKit;
+using MimeKit;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,54 +10,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using MimeKit;
-using System.Runtime.CompilerServices;
+using MailKit.Net.Pop3;
 
 namespace Lab05
 {
-    public partial class Lab05_Bai02 : Form
+    public partial class Lab05_Bai03 : Form
     {
         List<MimeMessage> emails = new List<MimeMessage>();
-        public Lab05_Bai02()
+        public Lab05_Bai03()
         {
             InitializeComponent();
             listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
-
         }
 
         private void button_Login_Click(object sender, EventArgs e)
         {
-            var client = new ImapClient();
-            client.Connect("imap.gmail.com", 993, true);
-            client.Authenticate(textBox_Email.Text, textBox_Password.Text);
+            var client = new Pop3Client();
+            client.Connect("pop.gmail.com", 995, true);
+            client.Authenticate(textBox_Email.Text, textBox_Password.Text);   //bcctyctoaolwyoqs
 
 
-            var inbox = client.Inbox;
-            inbox.Open(FolderAccess.ReadOnly);
+            var messages = client.GetMessageCount();
 
             listView1.Items.Clear();
             listView1.Columns.Clear();
+
 
             // Thêm các cột vào ListView
             listView1.Columns.Add("From", 300);
             listView1.Columns.Add("Email", 300);
             listView1.Columns.Add("Date", 200);
 
-            // Lấy số lượng email gần nhất là 20
-            int count = Math.Min(inbox.Count, 20);
-
-
-            // Lấy các email gần nhất và lưu vào danh sách emails
-            emails = new List<MimeMessage>();
-            for (int i = inbox.Count - count; i < inbox.Count; i++)
+            for (int i = 0; i < messages; i++)
             {
-                var message = inbox.GetMessage(i);
-                emails.Insert(0, message); // Chèn email vào đầu danh sách
-            }
-
-            foreach (var message in emails)
-            {
+                var message = client.GetMessage(i);
+                emails.Add(message);
                 // Tạo một ListViewItem mới
                 var item = new ListViewItem(message.From.Mailboxes.FirstOrDefault()?.Name);
 
@@ -70,12 +58,13 @@ namespace Lab05
 
                 // Thêm ListViewItem vào ListView
                 listView1.Items.Add(item);
+
             }
+            //label_Total.Text = $"Tổng số email: {messages}";
 
             client.Disconnect(true);
         }
 
-        //Chọn nội dung mail muốn đọc 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listView1.SelectedItems.Count > 0)
@@ -88,27 +77,26 @@ namespace Lab05
             }
         }
 
-
-
-        private void checkBox_Showpass_CheckedChanged_1(object sender, EventArgs e)
+        private void checkBox_Showpass_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_Showpass.Checked)
             {
                 textBox_Password.UseSystemPasswordChar = false;
-
             }
             else
             {
                 textBox_Password.UseSystemPasswordChar = true;
-
             }
         }
 
-        private void textBox_Email_TextChanged(object sender, EventArgs e)
+        private void textBox_Password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lab05_Bai03_Load(object sender, EventArgs e)
         {
 
         }
     }
 }
-
-
