@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lab05_Bai04));
             listView_mail = new ListView();
             panel_login = new Panel();
             button_refresh = new Button();
@@ -47,9 +48,10 @@
             // 
             // listView_mail
             // 
-            listView_mail.Location = new Point(12, 143);
+            listView_mail.BackColor = Color.FromArgb(250, 244, 228);
+            listView_mail.Location = new Point(-5, 253);
             listView_mail.Name = "listView_mail";
-            listView_mail.Size = new Size(776, 295);
+            listView_mail.Size = new Size(880, 238);
             listView_mail.TabIndex = 0;
             listView_mail.UseCompatibleStateImageBehavior = false;
             listView_mail.View = View.Details;
@@ -57,119 +59,138 @@
             // 
             // panel_login
             // 
+            panel_login.BackColor = Color.Transparent;
             panel_login.Controls.Add(button_refresh);
             panel_login.Controls.Add(button_logout);
             panel_login.Controls.Add(button_send);
             panel_login.Controls.Add(textBox_usermail);
             panel_login.Controls.Add(textBox_password);
             panel_login.Controls.Add(button_login);
-            panel_login.Location = new Point(12, 12);
+            panel_login.Location = new Point(29, 42);
             panel_login.Name = "panel_login";
-            panel_login.Size = new Size(322, 125);
+            panel_login.Size = new Size(385, 147);
             panel_login.TabIndex = 1;
             // 
             // button_refresh
             // 
-            button_refresh.Location = new Point(109, 88);
+            button_refresh.BackColor = Color.FromArgb(250, 244, 228);
+            button_refresh.Location = new Point(138, 102);
             button_refresh.Name = "button_refresh";
             button_refresh.Size = new Size(103, 29);
             button_refresh.TabIndex = 7;
             button_refresh.Text = "Refresh";
-            button_refresh.UseVisualStyleBackColor = true;
+            button_refresh.UseVisualStyleBackColor = false;
             button_refresh.Visible = false;
             button_refresh.Click += button_refresh_Click;
             // 
             // button_logout
             // 
-            button_logout.Location = new Point(215, 88);
+            button_logout.BackColor = Color.FromArgb(250, 244, 228);
+            button_logout.Location = new Point(259, 102);
             button_logout.Name = "button_logout";
             button_logout.Size = new Size(103, 29);
             button_logout.TabIndex = 6;
             button_logout.Text = "Đăng xuất";
-            button_logout.UseVisualStyleBackColor = true;
+            button_logout.UseVisualStyleBackColor = false;
             button_logout.Visible = false;
             button_logout.Click += button_logout_Click;
             // 
             // button_send
             // 
-            button_send.Location = new Point(4, 88);
+            button_send.BackColor = Color.FromArgb(250, 244, 228);
+            button_send.Location = new Point(17, 102);
             button_send.Name = "button_send";
             button_send.Size = new Size(103, 29);
             button_send.TabIndex = 4;
             button_send.Text = "Gửi mail";
-            button_send.UseVisualStyleBackColor = true;
+            button_send.UseVisualStyleBackColor = false;
             button_send.Visible = false;
             button_send.Click += button_send_Click;
             // 
             // textBox_usermail
             // 
-            textBox_usermail.Location = new Point(85, 11);
+            textBox_usermail.BackColor = Color.FromArgb(250, 244, 228);
+            textBox_usermail.BorderStyle = BorderStyle.None;
+            textBox_usermail.Location = new Point(112, 12);
             textBox_usermail.Name = "textBox_usermail";
-            textBox_usermail.Size = new Size(233, 27);
+            textBox_usermail.Size = new Size(233, 20);
             textBox_usermail.TabIndex = 3;
             // 
             // textBox_password
             // 
-            textBox_password.Location = new Point(85, 52);
+            textBox_password.BackColor = Color.FromArgb(250, 244, 228);
+            textBox_password.BorderStyle = BorderStyle.None;
+            textBox_password.Location = new Point(113, 57);
             textBox_password.Name = "textBox_password";
             textBox_password.PasswordChar = '*';
-            textBox_password.Size = new Size(233, 27);
+            textBox_password.Size = new Size(233, 20);
             textBox_password.TabIndex = 0;
             // 
             // button_login
             // 
-            button_login.Location = new Point(215, 88);
+            button_login.BackColor = Color.FromArgb(250, 244, 228);
+            button_login.Location = new Point(260, 102);
             button_login.Name = "button_login";
             button_login.Size = new Size(103, 29);
             button_login.TabIndex = 1;
             button_login.Text = "Đăng nhập";
-            button_login.UseVisualStyleBackColor = true;
+            button_login.UseVisualStyleBackColor = false;
             button_login.Click += button_login_Click;
             // 
             // panel_setting
             // 
+            panel_setting.BackColor = Color.Transparent;
             panel_setting.Controls.Add(textBox_portsend);
             panel_setting.Controls.Add(textBox_hostsend);
             panel_setting.Controls.Add(textBox_hostget);
             panel_setting.Controls.Add(textBox_portget);
-            panel_setting.Location = new Point(340, 12);
+            panel_setting.Location = new Point(443, 42);
             panel_setting.Name = "panel_setting";
-            panel_setting.Size = new Size(448, 125);
+            panel_setting.Size = new Size(377, 147);
             panel_setting.TabIndex = 2;
             // 
             // textBox_portsend
             // 
-            textBox_portsend.Location = new Point(275, 52);
+            textBox_portsend.BackColor = Color.FromArgb(250, 244, 228);
+            textBox_portsend.BorderStyle = BorderStyle.None;
+            textBox_portsend.Location = new Point(249, 59);
             textBox_portsend.Name = "textBox_portsend";
             textBox_portsend.ReadOnly = true;
-            textBox_portsend.Size = new Size(160, 27);
+            textBox_portsend.Size = new Size(97, 20);
             textBox_portsend.TabIndex = 4;
             textBox_portsend.Text = "465";
+            textBox_portsend.TextChanged += textBox_portsend_TextChanged;
             // 
             // textBox_hostsend
             // 
-            textBox_hostsend.Location = new Point(275, 11);
+            textBox_hostsend.BackColor = Color.FromArgb(250, 244, 228);
+            textBox_hostsend.BorderStyle = BorderStyle.None;
+            textBox_hostsend.Location = new Point(242, 15);
             textBox_hostsend.Name = "textBox_hostsend";
             textBox_hostsend.ReadOnly = true;
-            textBox_hostsend.Size = new Size(160, 27);
+            textBox_hostsend.Size = new Size(120, 20);
             textBox_hostsend.TabIndex = 3;
             textBox_hostsend.Text = "smtp.gmail.com";
             // 
             // textBox_hostget
             // 
-            textBox_hostget.Location = new Point(48, 11);
+            textBox_hostget.BackColor = Color.FromArgb(250, 244, 228);
+            textBox_hostget.BorderStyle = BorderStyle.None;
+            textBox_hostget.Location = new Point(63, 14);
             textBox_hostget.Name = "textBox_hostget";
             textBox_hostget.ReadOnly = true;
-            textBox_hostget.Size = new Size(160, 27);
+            textBox_hostget.Size = new Size(113, 20);
             textBox_hostget.TabIndex = 2;
             textBox_hostget.Text = "imap.gmail.com";
             // 
             // textBox_portget
             // 
-            textBox_portget.Location = new Point(48, 53);
+            textBox_portget.BackColor = Color.FromArgb(250, 244, 228);
+            textBox_portget.BorderStyle = BorderStyle.None;
+            textBox_portget.Location = new Point(70, 58);
             textBox_portget.Name = "textBox_portget";
             textBox_portget.ReadOnly = true;
-            textBox_portget.Size = new Size(160, 27);
+            textBox_portget.Size = new Size(99, 20);
             textBox_portget.TabIndex = 1;
             textBox_portget.Text = "993";
             // 
@@ -177,12 +198,15 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(250, 244, 228);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(873, 516);
             Controls.Add(panel_setting);
             Controls.Add(panel_login);
             Controls.Add(listView_mail);
             Name = "Lab05_Bai04";
             Text = "Lab05_Bai04";
+            Load += Lab05_Bai04_Load;
             panel_login.ResumeLayout(false);
             panel_login.PerformLayout();
             panel_setting.ResumeLayout(false);

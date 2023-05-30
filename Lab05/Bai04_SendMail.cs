@@ -65,7 +65,7 @@ namespace Lab05
                     Content = new MimeContent(File.OpenRead(textBox_attachment.Text)),
                     ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
                     ContentTransferEncoding = ContentEncoding.Base64,
-                    FileName = Path.GetFileName(textBox_attachment.Text )
+                    FileName = Path.GetFileName(textBox_attachment.Text)
                 };
                 var multipart = new Multipart("mixed");
                 multipart.Add(message.Body);
@@ -96,6 +96,11 @@ namespace Lab05
             textBox_to.Text = To;
             textBox_subject.Text = Subject;
             richTextBox_body.Text = Body;
+        }
+
+        private void textBox_attachment_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

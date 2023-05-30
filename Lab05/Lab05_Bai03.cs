@@ -60,8 +60,7 @@ namespace Lab05
                 listView1.Items.Add(item);
 
             }
-            //label_Total.Text = $"Tổng số email: {messages}";
-
+            
             client.Disconnect(true);
         }
 

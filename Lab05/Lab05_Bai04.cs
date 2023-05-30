@@ -129,5 +129,15 @@ namespace Lab05
                 f7.ShowDialog();
             }
         }
+
+        private void Lab05_Bai04_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_portsend_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
