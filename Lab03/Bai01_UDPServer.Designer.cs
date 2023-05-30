@@ -76,7 +76,6 @@
             Controls.Add(button_listen);
             Name = "Bai01_UDPServer";
             Text = "UDPServer";
-            Load += Bai01_UDPServer_Load;
             ResumeLayout(false);
             PerformLayout();
         }
