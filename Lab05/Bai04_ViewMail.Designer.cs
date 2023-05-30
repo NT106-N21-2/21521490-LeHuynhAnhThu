@@ -33,6 +33,7 @@
             button_reply = new Button();
             textBox_from = new TextBox();
             textBox_to = new TextBox();
+            textBox_subject = new TextBox();
             ((System.ComponentModel.ISupportInitialize)webView_mail).BeginInit();
             SuspendLayout();
             // 
@@ -43,9 +44,9 @@
             webView_mail.CreationProperties = null;
             webView_mail.DefaultBackgroundColor = Color.White;
             webView_mail.ForeColor = SystemColors.ControlText;
-            webView_mail.Location = new Point(38, 145);
+            webView_mail.Location = new Point(38, 167);
             webView_mail.Name = "webView_mail";
-            webView_mail.Size = new Size(766, 342);
+            webView_mail.Size = new Size(766, 320);
             webView_mail.TabIndex = 0;
             webView_mail.ZoomFactor = 1D;
             // 
@@ -65,7 +66,7 @@
             // 
             textBox_from.BackColor = Color.FromArgb(244, 168, 46);
             textBox_from.BorderStyle = BorderStyle.None;
-            textBox_from.Location = new Point(248, 29);
+            textBox_from.Location = new Point(255, 29);
             textBox_from.Name = "textBox_from";
             textBox_from.Size = new Size(293, 20);
             textBox_from.TabIndex = 2;
@@ -74,10 +75,19 @@
             // 
             textBox_to.BackColor = Color.FromArgb(244, 168, 46);
             textBox_to.BorderStyle = BorderStyle.None;
-            textBox_to.Location = new Point(250, 75);
+            textBox_to.Location = new Point(255, 75);
             textBox_to.Name = "textBox_to";
             textBox_to.Size = new Size(293, 20);
             textBox_to.TabIndex = 3;
+            // 
+            // textBox_subject
+            // 
+            textBox_subject.BackColor = Color.FromArgb(244, 168, 46);
+            textBox_subject.BorderStyle = BorderStyle.None;
+            textBox_subject.Location = new Point(260, 119);
+            textBox_subject.Name = "textBox_subject";
+            textBox_subject.Size = new Size(288, 20);
+            textBox_subject.TabIndex = 4;
             // 
             // Bai04_ViewMail
             // 
@@ -85,6 +95,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(830, 493);
+            Controls.Add(textBox_subject);
             Controls.Add(textBox_to);
             Controls.Add(textBox_from);
             Controls.Add(button_reply);
@@ -103,5 +114,6 @@
         private Button button_reply;
         private TextBox textBox_from;
         private TextBox textBox_to;
+        private TextBox textBox_subject;
     }
 }

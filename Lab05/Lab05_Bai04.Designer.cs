@@ -159,7 +159,7 @@
             textBox_portsend.Size = new Size(97, 20);
             textBox_portsend.TabIndex = 4;
             textBox_portsend.Text = "465";
-            textBox_portsend.TextChanged += textBox_portsend_TextChanged;
+            
             // 
             // textBox_hostsend
             // 
@@ -206,7 +206,7 @@
             Controls.Add(listView_mail);
             Name = "Lab05_Bai04";
             Text = "Lab05_Bai04";
-            Load += Lab05_Bai04_Load;
+           
             panel_login.ResumeLayout(false);
             panel_login.PerformLayout();
             panel_setting.ResumeLayout(false);

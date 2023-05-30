@@ -87,7 +87,7 @@
             // 
             textBox_attachment.BackColor = Color.FromArgb(244, 168, 46);
             textBox_attachment.BorderStyle = BorderStyle.None;
-            textBox_attachment.ForeColor = Color.FromArgb(244, 168, 46);
+            textBox_attachment.ForeColor = Color.Black;
             textBox_attachment.Location = new Point(34, 451);
             textBox_attachment.Name = "textBox_attachment";
             textBox_attachment.Size = new Size(531, 20);

@@ -104,10 +104,6 @@ namespace Lab05
             }
         }
 
-        private void textBox_Email_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

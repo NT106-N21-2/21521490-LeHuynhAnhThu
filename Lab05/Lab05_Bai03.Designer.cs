@@ -34,6 +34,7 @@
             textBox_Email = new TextBox();
             button_Login = new Button();
             checkBox_Showpass = new CheckBox();
+            label_total = new Label();
             SuspendLayout();
             // 
             // listView1
@@ -86,12 +87,24 @@
             checkBox_Showpass.UseVisualStyleBackColor = true;
             checkBox_Showpass.CheckedChanged += checkBox_Showpass_CheckedChanged;
             // 
+            // label_total
+            // 
+            label_total.AutoSize = true;
+            label_total.BackColor = Color.Transparent;
+            label_total.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label_total.Location = new Point(734, 50);
+            label_total.Name = "label_total";
+            label_total.Size = new Size(0, 23);
+            label_total.TabIndex = 10;
+            label_total.UseWaitCursor = true;
+            // 
             // Lab05_Bai03
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
+            Controls.Add(label_total);
             Controls.Add(checkBox_Showpass);
             Controls.Add(listView1);
             Controls.Add(textBox_Password);
@@ -111,5 +124,6 @@
         private TextBox textBox_Email;
         private Button button_Login;
         private CheckBox checkBox_Showpass;
+        private Label label_total;
     }
 }

@@ -60,8 +60,10 @@ namespace Lab05
                 listView1.Items.Add(item);
 
             }
-            
+
             client.Disconnect(true);
+            label_total.Text = $"{messages}";
+            label_total.BringToFront();
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)

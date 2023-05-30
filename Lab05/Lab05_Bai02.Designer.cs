@@ -57,7 +57,7 @@
             textBox_Email.Name = "textBox_Email";
             textBox_Email.Size = new Size(376, 20);
             textBox_Email.TabIndex = 1;
-            textBox_Email.TextChanged += textBox_Email_TextChanged;
+      
             // 
             // textBox_Password
             // 

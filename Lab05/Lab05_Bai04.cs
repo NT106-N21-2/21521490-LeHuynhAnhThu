@@ -47,7 +47,7 @@ namespace Lab05
             listView_mail.Columns.Add("Subject", 200);
             listView_mail.Columns.Add("Date", 120);
 
-            for (int i = inbox.Count - 1; i >= inbox.Count - 1 - 10; i--)
+            for (int i = inbox.Count - 1; i >= inbox.Count - 1 - 19; i--)
             {
                 var message = inbox.GetMessage(i);
                 emails.Add(message);

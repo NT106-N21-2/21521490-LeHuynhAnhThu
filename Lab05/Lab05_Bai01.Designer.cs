@@ -51,7 +51,7 @@
             // 
             // textBox_subject
             // 
-            textBox_subject.BackColor = Color.FromArgb(234, 194, 85);
+            textBox_subject.BackColor = Color.FromArgb(239, 207, 49);
             textBox_subject.BorderStyle = BorderStyle.None;
             textBox_subject.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             textBox_subject.ForeColor = Color.FromArgb(28, 96, 148);
@@ -73,9 +73,9 @@
             // 
             // richTextBox_body
             // 
-            richTextBox_body.Location = new Point(51, 218);
+            richTextBox_body.Location = new Point(51, 217);
             richTextBox_body.Name = "richTextBox_body";
-            richTextBox_body.Size = new Size(742, 220);
+            richTextBox_body.Size = new Size(742, 221);
             richTextBox_body.TabIndex = 4;
             richTextBox_body.Text = "";
             // 

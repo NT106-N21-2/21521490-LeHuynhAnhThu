@@ -42,6 +42,7 @@ namespace Lab05
         {
             textBox_from.Text = To;
             textBox_to.Text = From;
+            textBox_subject.Text = Subject;
         }
 
         private void button_reply_Click(object sender, EventArgs e)
