@@ -11,7 +11,7 @@ namespace Lab06
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Lab06_Bai01());
+            Application.Run(new Lab06());
         }
     }
 }

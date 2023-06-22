@@ -31,7 +31,7 @@ namespace Lab06
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Lab06_Bai03 f4 = new Lab06_Bai03();
+            Bai03_Dashboard f4 = new Bai03_Dashboard();
             f4.ShowDialog();
         }
     }
