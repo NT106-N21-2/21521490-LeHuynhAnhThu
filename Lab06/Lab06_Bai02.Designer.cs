@@ -84,6 +84,7 @@
             textBox_key.Name = "textBox_key";
             textBox_key.Size = new Size(125, 20);
             textBox_key.TabIndex = 8;
+            textBox_key.KeyPress += textBox_key_KeyPress;
             // 
             // button_decode
             // 

@@ -77,6 +77,7 @@
             textBox_shift.Name = "textBox_shift";
             textBox_shift.Size = new Size(125, 16);
             textBox_shift.TabIndex = 2;
+            textBox_shift.KeyPress += textBox_shift_KeyPress;
             // 
             // richTextBox_input
             // 
