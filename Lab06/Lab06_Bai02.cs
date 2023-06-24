@@ -66,5 +66,13 @@ namespace Lab06
             }
             richTextBox_decode.Text = plainText;
         }
+
+        private void textBox_key_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Không cho phép nhập số vào TextBox
+            }
+        }
     }
 }
