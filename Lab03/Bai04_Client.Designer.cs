@@ -44,7 +44,6 @@
             richTextBox1.Size = new Size(466, 162);
             richTextBox1.TabIndex = 7;
             richTextBox1.Text = "";
-            richTextBox1.TextChanged += richTextBox1_TextChanged;
             // 
             // button_disconnect
             // 
@@ -94,7 +93,6 @@
             Controls.Add(button_connect);
             Name = "Bai04_Client";
             Text = "Bai04_Client";
-            Load += Bai04_Client_Load;
             ResumeLayout(false);
         }
 

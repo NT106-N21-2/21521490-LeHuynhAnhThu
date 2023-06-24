@@ -93,6 +93,5 @@ namespace Lab06
             // Close the client connection
             client.Close();
         }
-
     }
 }

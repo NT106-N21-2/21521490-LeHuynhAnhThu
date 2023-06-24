@@ -92,7 +92,6 @@
             textBox_attachment.Name = "textBox_attachment";
             textBox_attachment.Size = new Size(531, 20);
             textBox_attachment.TabIndex = 4;
-            textBox_attachment.TextChanged += textBox_attachment_TextChanged;
             // 
             // textBox_subject
             // 

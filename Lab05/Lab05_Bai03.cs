@@ -89,15 +89,5 @@ namespace Lab05
                 textBox_Password.UseSystemPasswordChar = true;
             }
         }
-
-        private void textBox_Password_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lab05_Bai03_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

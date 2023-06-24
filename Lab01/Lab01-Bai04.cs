@@ -167,7 +167,5 @@ namespace Lab01
                 this.Hide();
             }
         }
-
-
     }
 }

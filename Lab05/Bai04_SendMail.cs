@@ -97,10 +97,5 @@ namespace Lab05
             textBox_subject.Text = Subject;
             richTextBox_body.Text = Body;
         }
-
-        private void textBox_attachment_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

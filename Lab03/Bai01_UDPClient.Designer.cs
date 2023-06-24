@@ -65,7 +65,6 @@
             richTextBox_message.Size = new Size(599, 134);
             richTextBox_message.TabIndex = 2;
             richTextBox_message.Text = "";
-            richTextBox_message.TextChanged += richTextBox_message_TextChanged;
             // 
             // button_send
             // 
