@@ -38,6 +38,7 @@
             richTextBox_server.BackColor = Color.FromArgb(240, 193, 241);
             richTextBox_server.BorderStyle = BorderStyle.None;
             richTextBox_server.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            richTextBox_server.ForeColor = Color.FromArgb(105, 0, 97);
             richTextBox_server.Location = new Point(382, 132);
             richTextBox_server.Name = "richTextBox_server";
             richTextBox_server.Size = new Size(364, 264);

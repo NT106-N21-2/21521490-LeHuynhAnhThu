@@ -67,7 +67,7 @@ namespace Lab06
                 // Get the client name
                 byte[] encryptedNameBytes = new byte[4096];
                 int nameLength = stream.Read(encryptedNameBytes, 0, encryptedNameBytes.Length);
-                string name = RSAKeys.DecryptData(encryptedNameBytes); // Decrypt the message
+                string name = RSAKeys.DecryptData(encryptedNameBytes); // Decrypt the name 
 
                 richTextBox_server.Invoke(new Action(() => richTextBox_server.AppendText("Client from " + client.Client.RemoteEndPoint.ToString() + " name: " + name + "\r\n")));
 
@@ -94,7 +94,7 @@ namespace Lab06
 
                     byte[] encryptedMessageBytes = new byte[bytesRead];
                     Array.Copy(buffer, encryptedMessageBytes, bytesRead);
-                    string decryptedMessage = RSAKeys.DecryptData(encryptedMessageBytes); // Giải mã tin nhắn
+                    string decryptedMessage = RSAKeys.DecryptData(encryptedMessageBytes); // Decrypt the message 
 
 
                     richTextBox_server.Invoke(new Action(() => richTextBox_server.AppendText("Received message from " + name + "! \r\n")));

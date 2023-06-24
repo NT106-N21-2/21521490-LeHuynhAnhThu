@@ -74,13 +74,13 @@ namespace Lab06
         {
             // Send the message to the server
             string message = textBox_message.Text;
-            byte[] encryptedMessageBytes = RSAKeys.EncryptData(message); // Mã hóa tin nhắn
+            byte[] encryptedMessageBytes = RSAKeys.EncryptData(message); // message encryption
 
             if (!nameSent)
             {
                 string name = textBox_name.Text;
                 textBox_name.Enabled = false;
-                byte[] encryptedNameBytes = RSAKeys.EncryptData(name); // Mã hóa tên
+                byte[] encryptedNameBytes = RSAKeys.EncryptData(name); // Name encryption 
                 stream.Write(encryptedNameBytes, 0, encryptedNameBytes.Length);
                 nameSent = true;
             }
