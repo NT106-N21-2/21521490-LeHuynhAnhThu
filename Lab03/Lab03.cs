@@ -1,7 +1,7 @@
 using Lab03_Bai01;
 using Lab03_Bai02;
 using Lab03_Bai03;
-//using Lab03_Bai04;
+using Lab03_Bai04;
 using Lab03_Bai05;
 
 namespace Lab03
