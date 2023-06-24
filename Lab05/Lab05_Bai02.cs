@@ -88,8 +88,6 @@ namespace Lab05
             }
         }
 
-                     
-
         private void checkBox_Showpass_CheckedChanged_1(object sender, EventArgs e)
         {
             if (checkBox_Showpass.Checked)

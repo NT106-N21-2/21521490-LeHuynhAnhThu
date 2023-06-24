@@ -30,10 +30,5 @@ namespace Lab05
             Lab05_Bai04 f4 = new Lab05_Bai04();
             f4.ShowDialog();
         }
-
-        private void Lab05_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

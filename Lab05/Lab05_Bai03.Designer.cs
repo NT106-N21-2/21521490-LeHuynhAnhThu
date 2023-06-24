@@ -54,7 +54,6 @@
             textBox_Password.Name = "textBox_Password";
             textBox_Password.Size = new Size(381, 20);
             textBox_Password.TabIndex = 6;
-            textBox_Password.TextChanged += textBox_Password_TextChanged;
             // 
             // textBox_Email
             // 
@@ -112,7 +111,6 @@
             Controls.Add(button_Login);
             Name = "Lab05_Bai03";
             Text = "Lab05_Bai03";
-            Load += Lab05_Bai03_Load;
             ResumeLayout(false);
             PerformLayout();
         }
