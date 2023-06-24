@@ -65,7 +65,6 @@
             Name = "Bai04_Server1";
             Text = "Bai04_Server1";
             FormClosing += Bai04_Server1_FormClosing;
-            Load += Bai04_Server1_Load;
             ResumeLayout(false);
         }
 

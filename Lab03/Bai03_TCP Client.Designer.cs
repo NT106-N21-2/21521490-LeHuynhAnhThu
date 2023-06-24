@@ -81,7 +81,6 @@
             richTextBox1.Size = new Size(431, 193);
             richTextBox1.TabIndex = 3;
             richTextBox1.Text = "";
-            richTextBox1.TextChanged += richTextBox1_TextChanged;
             // 
             // TCP_Client
             // 
