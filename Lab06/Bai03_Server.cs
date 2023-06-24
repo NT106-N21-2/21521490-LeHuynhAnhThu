@@ -13,7 +13,7 @@ using System.Security.Cryptography;
 using Microsoft.VisualBasic;
 using Org.BouncyCastle.Crypto;
 using System.Diagnostics.Metrics;
-using RSA; 
+using RSA;
 
 namespace Lab06
 {
@@ -34,7 +34,7 @@ namespace Lab06
             server.Start();
             richTextBox_server.AppendText("Server started.\r\n");
 
-            // Start listening for incoming connections
+            // Listenting the connections  
             Task.Run(async () =>
             {
                 while (true)
@@ -67,8 +67,7 @@ namespace Lab06
                 // Get the client name
                 byte[] encryptedNameBytes = new byte[4096];
                 int nameLength = stream.Read(encryptedNameBytes, 0, encryptedNameBytes.Length);
-                string name = RSAKeys.DecryptData(encryptedNameBytes); // Giải mã tên
-
+                string name = RSAKeys.DecryptData(encryptedNameBytes); // Decrypt the message
 
                 richTextBox_server.Invoke(new Action(() => richTextBox_server.AppendText("Client from " + client.Client.RemoteEndPoint.ToString() + " name: " + name + "\r\n")));
 
@@ -98,7 +97,7 @@ namespace Lab06
                     string decryptedMessage = RSAKeys.DecryptData(encryptedMessageBytes); // Giải mã tin nhắn
 
 
-                    richTextBox_server.Invoke(new Action(() => richTextBox_server.AppendText("Received message from " + name + ": " + decryptedMessage + "\r\n")));
+                    richTextBox_server.Invoke(new Action(() => richTextBox_server.AppendText("Received message from " + name + "! \r\n")));
 
                     // Broadcast the message to all clients
                     string message = name + ": " + decryptedMessage + "\r\n";
@@ -127,8 +126,8 @@ namespace Lab06
             {
                 client.Close();
             }
-            MessageBox.Show("Server disconnected!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Server disconnected!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
-    
+

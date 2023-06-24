@@ -23,14 +23,11 @@ namespace Lab06
         private TcpClient client;
         private NetworkStream stream;
         private string name;
-       
-
         public Bai03_Client()
         {
             InitializeComponent();
 
         }
-
         private void Bai03_Client_Load(object sender, EventArgs e)
         {    // Connect to the server
             client = new TcpClient("localhost", 9999);
@@ -38,7 +35,6 @@ namespace Lab06
             // Start a new thread to receive messages from the server
             Task.Run(() => ReceiveMessages());
         }
-
         private async Task ReceiveMessages()
         {
             try
@@ -74,7 +70,6 @@ namespace Lab06
         }
 
         private bool nameSent = false;
-
         private void button_send_Click_1(object sender, EventArgs e)
         {
             // Send the message to the server
@@ -98,6 +93,6 @@ namespace Lab06
             // Close the client connection
             client.Close();
         }
-  
+
     }
 }

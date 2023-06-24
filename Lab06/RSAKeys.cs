@@ -11,22 +11,25 @@ using Org.BouncyCastle.Utilities;
 
 namespace RSA
 {
-    public class RSAKeys
+    public class RSAKeys // Create size of 2 keys: 4096 bits 
     {
         // SERVER
         public static AsymmetricCipherKeyPair ImportPrivateKey()
         {
+            // Get the current directory
             var currentDirectory = Directory.GetCurrentDirectory();
             var basePath = currentDirectory.Split(new string[] { "\\bin" }, StringSplitOptions.None)[0];
+            // Read the private key from PEM file
             string keyPath = basePath + "\\key\\privateKey.pem";
             string pem = File.ReadAllText(keyPath);
+            // Parse the PEM and retrieve the key pair
             PemReader pr = new PemReader(new StringReader(pem));
             AsymmetricCipherKeyPair keyPair = (AsymmetricCipherKeyPair)pr.ReadObject();
             return keyPair;
         }
-
         public static string DecryptData(byte[] encryptedDataBytes)
         {
+            // Import the private key
             AsymmetricCipherKeyPair keyPair = ImportPrivateKey();
             RsaPrivateCrtKeyParameters privateKey = (RsaPrivateCrtKeyParameters)keyPair.Private;
             RsaEngine engine = new RsaEngine();
@@ -35,7 +38,8 @@ namespace RSA
             int blockSize = engine.GetInputBlockSize();
             int encryptedDataLength = encryptedDataBytes.Length;
             using (MemoryStream decryptedData = new MemoryStream())
-            {
+            {   
+                // Process the encrypted data in blocks
                 for (int i = 0; i < encryptedDataLength; i += blockSize)
                 {
                     int blockSizeRemaining = Math.Min(blockSize, encryptedDataLength - i);
@@ -45,7 +49,6 @@ namespace RSA
                 return Encoding.UTF8.GetString(decryptedData.ToArray());
             }
         }
-
         // CLIENT
         public static AsymmetricKeyParameter ImportPublicKey()
         {
@@ -57,7 +60,6 @@ namespace RSA
             AsymmetricKeyParameter publicKey = (AsymmetricKeyParameter)pr.ReadObject();
             return publicKey;
         }
-
         public static byte[] EncryptData(string data)
         {
             AsymmetricKeyParameter publicKey = ImportPublicKey();

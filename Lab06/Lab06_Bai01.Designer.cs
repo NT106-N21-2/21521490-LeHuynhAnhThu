@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lab06_Bai01));
             button_encode = new Button();
             button_decode = new Button();
             textBox_shift = new TextBox();
@@ -38,54 +39,80 @@
             // 
             // button_encode
             // 
-            button_encode.Location = new Point(541, 26);
+            button_encode.BackColor = Color.Transparent;
+            button_encode.FlatAppearance.BorderSize = 0;
+            button_encode.FlatAppearance.CheckedBackColor = Color.Transparent;
+            button_encode.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button_encode.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_encode.FlatStyle = FlatStyle.Flat;
+            button_encode.Location = new Point(116, 189);
             button_encode.Name = "button_encode";
-            button_encode.Size = new Size(94, 29);
+            button_encode.Size = new Size(120, 29);
             button_encode.TabIndex = 0;
-            button_encode.Text = "MÃ HÓA";
-            button_encode.UseVisualStyleBackColor = true;
+            button_encode.UseVisualStyleBackColor = false;
             button_encode.Click += button_encode_Click;
             // 
             // button_decode
             // 
-            button_decode.Location = new Point(682, 26);
+            button_decode.BackColor = Color.Transparent;
+            button_decode.FlatAppearance.BorderSize = 0;
+            button_decode.FlatAppearance.CheckedBackColor = Color.Transparent;
+            button_decode.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button_decode.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button_decode.FlatStyle = FlatStyle.Flat;
+            button_decode.Location = new Point(116, 244);
             button_decode.Name = "button_decode";
-            button_decode.Size = new Size(94, 29);
+            button_decode.Size = new Size(120, 29);
             button_decode.TabIndex = 1;
-            button_decode.Text = "GIẢI MÃ";
-            button_decode.UseVisualStyleBackColor = true;
+            button_decode.UseVisualStyleBackColor = false;
             button_decode.Click += button_decode_Click;
             // 
             // textBox_shift
             // 
-            textBox_shift.Location = new Point(33, 63);
+            textBox_shift.BackColor = Color.FromArgb(240, 193, 241);
+            textBox_shift.BorderStyle = BorderStyle.None;
+            textBox_shift.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox_shift.ForeColor = Color.FromArgb(105, 0, 97);
+            textBox_shift.Location = new Point(114, 141);
             textBox_shift.Name = "textBox_shift";
-            textBox_shift.Size = new Size(125, 27);
+            textBox_shift.Size = new Size(125, 16);
             textBox_shift.TabIndex = 2;
             // 
             // richTextBox_input
             // 
-            richTextBox_input.Location = new Point(33, 128);
+            richTextBox_input.BackColor = Color.White;
+            richTextBox_input.BorderStyle = BorderStyle.None;
+            richTextBox_input.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            richTextBox_input.ForeColor = Color.FromArgb(105, 0, 97);
+            richTextBox_input.Location = new Point(383, 90);
             richTextBox_input.Name = "richTextBox_input";
-            richTextBox_input.Size = new Size(743, 78);
+            richTextBox_input.Size = new Size(381, 89);
             richTextBox_input.TabIndex = 3;
             richTextBox_input.Text = "";
             // 
             // richTextBox_encode
             // 
-            richTextBox_encode.Location = new Point(33, 234);
+            richTextBox_encode.BackColor = Color.White;
+            richTextBox_encode.BorderStyle = BorderStyle.None;
+            richTextBox_encode.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            richTextBox_encode.ForeColor = Color.FromArgb(105, 0, 97);
+            richTextBox_encode.Location = new Point(383, 212);
             richTextBox_encode.Name = "richTextBox_encode";
             richTextBox_encode.ReadOnly = true;
-            richTextBox_encode.Size = new Size(743, 78);
+            richTextBox_encode.Size = new Size(381, 94);
             richTextBox_encode.TabIndex = 4;
             richTextBox_encode.Text = "";
             // 
             // richTextBox_decode
             // 
-            richTextBox_decode.Location = new Point(33, 343);
+            richTextBox_decode.BackColor = Color.White;
+            richTextBox_decode.BorderStyle = BorderStyle.None;
+            richTextBox_decode.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            richTextBox_decode.ForeColor = Color.FromArgb(105, 0, 97);
+            richTextBox_decode.Location = new Point(383, 341);
             richTextBox_decode.Name = "richTextBox_decode";
             richTextBox_decode.ReadOnly = true;
-            richTextBox_decode.Size = new Size(743, 78);
+            richTextBox_decode.Size = new Size(375, 69);
             richTextBox_decode.TabIndex = 5;
             richTextBox_decode.Text = "";
             // 
@@ -93,7 +120,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(800, 466);
             Controls.Add(richTextBox_decode);
             Controls.Add(richTextBox_encode);
             Controls.Add(richTextBox_input);

@@ -1,4 +1,4 @@
-namespace Lab06
+﻿namespace Lab06
 {
     public partial class Lab06_Bai01 : Form
     {
